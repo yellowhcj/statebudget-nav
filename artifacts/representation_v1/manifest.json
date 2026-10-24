@@ -1,0 +1,1294 @@
+{
+  "created_utc": "2026-10-23T17:12:06.929408+00:00",
+  "environment": {
+    "dependencies": {
+      "cloudpickle": "3.0.0",
+      "farama-notifications": "0.0.6",
+      "gymnasium": "1.4.0",
+      "minigrid": "3.2.0",
+      "numpy": "1.26.4",
+      "pygame": null
+    },
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.7"
+  },
+  "jobs": [
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10000,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "105b9dc1925054ac11a7f90219e609c4e2f06da33a3c24a4288109113f09bcfb"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10001,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "491c3ef4f29a5a569df4affa0ba6c2b9179baf9e3759aff3478e55d683c2487f"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10002,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "64267eea57f13245d39f0441b484cc1928966a94f4f3e1087e16597821d82834"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10003,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "537dbd65d11d9ef42c2397145cc246edaad1ee10e1ea20cb99211966cb26e0d2"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10004,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "1311a25e771c82ac84c6e62b5d768e2f45b4d13c9f7ecf2fc471b5f4f9e7f573"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10005,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "50ac1054763f9f80e69eb8e9948ed682492ead4370ebbd8a9de8ee78ab9df5c5"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10006,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "acf17668012c326dc298d842d92e51c096c5a521cdff17b232191d5370157990"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10007,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "854f35c8f37f5793a7c8c3f21e02c3ae8f00cda64c8dddda592da53fd3aa4bca"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10008,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "938a8b826370ea6d1f5358ddd18f13314fec759c6f109571583e288bd5fe9835"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10009,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "5f82c35615a5a03cfd4bc8a1314f71d9716173f65b89eef71947a3b3ea50d334"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10010,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "3c92575ea0acc7da63b3ec9efd1dae8f09227583f01dfef13314aed055bc6c79"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10011,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "694e61fc8bb81aa953b3b87a7139f65bbfa832d0c34a288aa9dd1172f1f00685"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10012,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "7dd1b0467db2d041ef2902eeabf5455a6fcab279b5f6de23c8f2fd5616668992"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10013,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "4b833e3b93f5c25c14fb152f1ada200e8d4c24992604ac5b9b6da894defd0d6a"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10014,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "8d2f0bea19991f31c619ca9841057ae6d85b0a29429d8e0eb39c6029e96fd333"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10015,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "e608432977b59706508d35e01fd9bf3bdb7fea3d10505a9dd0bf9a2f266db28f"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10016,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "b0ff873f95d09b058ccf81d0d42600ee91c7b69898f10403738d7b03c57515f0"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10017,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "15cfdebcbe9d2813fb1948b06881312b607506f85a96c4208cf66562b2c7fde8"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10018,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "9dcafaceccc419a0501191abc7fb99943943de7c62c64c472653534c57fe314d"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10019,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "ed065d11d2c50b0c1d090ea4127a45df6898b6b6b85aab91d94d05527b81d567"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10020,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "719f8601106d745b35e020bf01ce95da266e108e3df0fc4320b3893437e468d3"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10021,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "6d0f6fc5b8c86b3022f62376eb1cf73ed665b658c2d49375d507530e63418dc6"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10022,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "fc662ee4d691df4a73691424011d82222ea3cedbf189d41e3d6ba5354de22215"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10023,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "2afb4e7bb2c9a2e6ce6f1fe7dca77317771d8e133346edf9c7ef08ad9a8d8c01"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10024,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "8ffc3ab6e4d6a19aeb7f2173c0c20c268d5addd4ccfa8ddb2428268e683f560f"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10025,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "d15f172fdc5400776d5c17ea51cbbda6aeed8e77555e5f5f3f3a2c65d6611b7a"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10026,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "21ed091329690637fee0a694f41f9093b65ba9b69938e505d8686843ee4a5799"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10027,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "c12ddc457c261574f53f57f9bd847600a7d940efbef3bcbf20b62c6ad367d01f"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10028,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "cf47ec0607d5c3175f18bea868d76d144b85d7c737a8f1563829c9618551eb2b"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10029,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "ddde07bc2793a4069efb6d48173b662ff7e5731a1bbd576c87b446cd36d645ba"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10030,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "81f6c124adbf7d7fd0574a97421ace1bd8261ec7c6923522f6c2a431e44e780e"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "lru",
+        "seed": 10031,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "b271e020beebedc70c399316b00fb227cce8499a771bf324eb2373da00ce52a3"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10000,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "577843904028b9c4a20ccbed1bc6e5402e4752f8a02549b3c6f99510c01b8d92"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10001,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "f879f5305d645689c33c56f13f8b94d59533022ace750cb213c86b4e26933f16"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10002,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "a033dc9d402898d9685401e73dbba05d6fcc7497a0c787399532e0be4f19d1f6"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10003,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "9bed41a5351b9755fe1f5ba854242099891fcbf0a918499cde1cb9e78f2893b6"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10004,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "4831d0813c9ff75d0e5a4dcba8225d31080362f46414891f184fbd9b195a66d4"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10005,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "203fcebc639d61bc8e60140282492176be0cfe592947852b72063a8af7be78ed"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10006,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "d58b51492b2055e04baa170289de16c4f0418eee329a974146653cfc03472037"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10007,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "5594e2ba2d3a2deaeeb6e2955166e6c8ffb72ded37c87c99a584e0802454f8ab"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10008,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "9533bcb1a4cfe9a85aefe38cc5d48f4543c3cefceeadfaf43bbefe53b8c37ccd"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10009,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "3b20480b7a8cac4fa8736ebe8c6be149e9ba9431c770626273069fefa79e9942"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10010,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "31742de7dbedc393e729ff03c844bf7146aece43755508feba518b1f095222ac"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10011,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "1dc22e82b558c50695c9019c9cd0ebf463dcbad6b145cb8eab6ec54642d4495c"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10012,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "20ae2c2e3f25aa88785ef2960a0cdfbefb7128fd137a22746f29083da9e952cf"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10013,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "d4d75288336e5e0d183d2352382db626c4733c3bf16df528f7dad43b60658eea"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10014,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "258a1b2fd836935306c712f1b60294f17ae3ce0021ab69faac0dfb054034ce73"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10015,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "c449c1a9c2b017577c076996620ae54bc48445be240113a8d11b4caa875a2312"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10016,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "773d8bc6af355c2d4311e991aaee8fec488170cfeca08be3431174fdea343be3"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10017,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "742b2b61b9066abe7287ac3b2c9f6d647b8fd6ede8ffe409b49f1180003bc789"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10018,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "9d0ffa33887d53951344767e080c36763c8c9632cb794cdc742dc4de66d1c0bd"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10019,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "e729dd6ed1c62c73aa767f439edf89639c897e221d610075512decddc92df2e5"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10020,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "b73f458162eaada246ad86f05a7d549c4bd6f63b670f4150c259fa0c1a5233ba"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10021,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "ddea1d54b3b8e4a98423552fb0e4d765c69b81e44b79f5aef190d1027789d0bd"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10022,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "fdeff36d268f57c4038fd166671d5d4ae81c92ac70d5a29394c2165f1c7f802f"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10023,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "42032343f9d0527989984df006f6d4118f8c3d38fa785189d4cabe629ab98589"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10024,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "9b5ada7aaacca8438f211f67b8b08d32b5306586cb3bbe3e79394dce5a0d7a85"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10025,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "0ae0ed6703487848c7f3187dae25a286606676d83807a98bb89a8ef896102b43"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10026,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "5dfa032282cc8f272cc11e64f44e6f776309b495d22fcb2417f6c1774f92c55e"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10027,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "e0108821cb6c72a572f95aca65789e8c51643e0ea77bbe4bbf25cd8b995ae429"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10028,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "226b68abb3018e23569a823a8e50749725a8368ea4766f711d9fef600e56b399"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10029,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "f637ce6ac040658020b59d4ac4049bb273f46777971b42035f901ae1a5d97563"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10030,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "18c47b641cba1efe07af360cd751d8d6f1416166ce4d8a0d75aa158db0b682b5"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "history_lru",
+        "seed": 10031,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "0915b9f2cc58037ee49154dea1377c112404a4c8e3587f41e74647d80ae8af92"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10000,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "b55c4ec408e4e54390e9f851a16d887bab50adf891abe961f086722a1b682760"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10001,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "e664206e8250e10e19190e586e8097619f56355f6046a0fff8f6108cbe1dddb3"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10002,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "df2033eed4ed467d5d79fed5b8b340e572a168f994036d40e321bac71cbf1fd2"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10003,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "cc62d6cdc614d8b182cd7eff0e0cc55d138ce4cf1f57f1d4f3f4cd4beaf8d627"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10004,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "594cdb36830a5ee20fa9d36e07c7ec75542c9ac8bda51c40cc2df56fe68f1017"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10005,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "a0a2763770c6386850b094a15317b0e9e6e7f4665619606e2840436f1c619f15"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10006,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "d1a0b680e870766f6b7208b046049681d4bb872c857bb1aa1b26cdb13c151f02"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10007,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "729a8f61a361b362991ea133264faabf595d2964d375dedddc5d3b4d30683ce4"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10008,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "1877cc11ceefea87733b8aab78b1f9384eede7fa105b9558dc211d19e47c4203"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10009,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "55acf4a59069fe2bfa8bfa695c94c69a69762a93d776b158d37fdbce40f3305b"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10010,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "871e68d5e285b28dfe1e6ed890890a49ac73d488e51e7acfb95a1d3d1f401c34"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10011,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "795c13353d6b77920980283f5f078b15246f3a08d0c867d84a16383ce52e66e9"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10012,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "b2acdfa09991a0318386cd9e28d61cc5be70b3c87471e1083d42df7eaaa4c42e"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10013,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "9d822f55720fad8e3294fc7938a7272e9f8138448594e0c03669d2a4540972a1"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10014,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "a67d0d4cff9d3a8e1977817462356ea52ec3b47be5c10e8b848d5e02653786c3"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10015,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "73eac2a77e5d96f920bd82436a12083ef5a40a222e4f1e975d5d60df41a9204b"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10016,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "b056d914ab9fed2ae61efa27534d58a130073056005bdabfd0b6e134032e98be"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10017,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "578e99ff862d6556eec9af8b759cf8a9ae9d3a2e5928c0c2f5a6c79f769d385d"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10018,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "f10036c97e623146e5105a3392bc167cee25693ea84a0c52de14f26297627dd7"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10019,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "b3297fc110bef2a38f84ac36d758620dd5f9d34ea97b1fc2cf5d936c04f26600"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10020,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "4048d1736409b9b387e57660f0de29fd2d18401410ce1ba16068b0f3c28a2cf2"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10021,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "77e19410de1e04a6ee91607f5619a638be8a513e5c12df455ef95482887d51c9"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10022,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "94ce410c268b1f8ff60d3386a46fb7bde125ff5289571a9ae47c0aaa1c0f1c3c"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10023,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "271451e7c1072c50cb8b640343a331932d4940cbac7e509c5918b3610000dc77"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10024,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "8b1147db8f1114ef1409b07f350a94238dc3f7c4f81a0d35f6a9bceab1a3f8db"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10025,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "eafc14e70492246401c0a737462a9eac65ef878699b679dea96a1e34c17f3566"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10026,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "367f08026342c41f4f7ee4dfb9d98a30edd7549bb4210511a7ac87202c871d6a"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10027,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "285e3ba4da9c9d0ea2b7c3d9e98b6700a729a7f4908a1d4f9a2e44e956725722"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10028,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "a129eb205585f3eadd84dac96ff9e9db96787bdf4f7b6cfcbef6b6c183038d26"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10029,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "716d1f72636ea162c958f97437f8dc4328be6da0481b8f49671646075e3bd663"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10030,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "6abf5907afb7134ff68a8e58a82aafe24f676f70d1d4350997ab16902d422ee8"
+    },
+    {
+      "configuration": {
+        "agent_seed": 1,
+        "budget": 112,
+        "env": "MiniGrid-MultiRoom-N6-v0",
+        "limit": 600,
+        "policy": "compressed",
+        "seed": 10031,
+        "selector": "nearest",
+        "view": 7
+      },
+      "job_id": "f9196d3c01f137630bb96ea8363ec29dbe406b23edcc1b758494e8160d5ee11c"
+    }
+  ],
+  "schema": "statebudget.batch.v1",
+  "source_sha256": {
+    "__init__.py": "78001231731849e2adebf8b00512ce1f69cbf9aad661da2a1b65ff48f339fd8d",
+    "__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "_core/__init__.py": "0412bdf5fac08a4d7ac806871b6ff27e03e91a5ae7450ab7be3e8a14ca1bc659",
+    "_core/benchmark.py": "b34870b027b3b6326e755664faf729cf2c9100e19dbe4f3b6a30e6852b46d89f",
+    "_core/checkpoint_worker.py": "17aed901cf49268851798f7b77d83310a9367a60435b6d725b9d1725f57fd566",
+    "_core/controller.py": "7b42b64c88bab33965da003e5133947461709c6d2d58aa138e94db9cdf43add0",
+    "_core/environments.py": "12c43d03c4c00049ea790f8dee25304d87e6a4a4227f9ae3cd87e7ce57262b7a",
+    "_core/face_controller.py": "6c3746fbabddd127e65399c5ec14e6e0af778a6e6cf657bf8373a3ad074552ff",
+    "_core/junction_controller.py": "02de3ce76da40bb9e0c2e75a5cb4b5c2ddf8b56aafc11c5431689103c785208f",
+    "_core/loop_controller.py": "166ed8adf65603d3dd0b98a76751dfacc0395c0980d7e1bc44325ac73a92d380",
+    "_core/matched_topology.py": "621a4d699a1e49b2b5dc0e56105e15e88ea141c66814e51fb678560ec87e0a08",
+    "_core/provenance.json": "ad4bc48118bf69ca28aa9b11b8d64c1ea351a720d70c21a1ee8e78baf4856475",
+    "_core/public_api.py": "577c7ac33891f4f5939c249c9abadc4c2b32f1a7a94d0d6dbe91dd8f15e0a7d3",
+    "_core/rotor_controller.py": "8d2c7e8307fba6a8efede1daf60b422a062b728898727e8e0daa4360d47dccfd",
+    "analysis.py": "5b695585792db57e0909c64aeeb7828eb84ff697db0761dcded943092e1bfc32",
+    "audit.py": "62b0839cc422a2918e5c43a13b330aeea603a815e1ebbb988026911126e46ae3",
+    "batch.py": "302bf96c66224ed5e826d06de4a09820e302ee1eb15c8b064fb58f8115199bd6",
+    "batch_worker.py": "8dd2d952b29058566355581e233ac98f72e7ec7218fca54406df73ef1af704ce",
+    "cli.py": "46ae39448789ec7a21b1c7b7c4fb9d75907e188e1efcf1cc4b9529f8701e9367",
+    "evaluation.py": "b7e1461501bf776e32654192e8574baddd98c43b89a9f55c95a9e3d580229752",
+    "examples/__init__.py": "3579d3a22e0e24628d15fd3609497e9ec10ca509c5503ca9d629f56a1040c114",
+    "examples/audit_faults.py": "6eaaef9e245bead878f40f9d68e1041a3246c70023637b10d95b1f9c01d6efa2",
+    "examples/counter.py": "c841bbb618331f36fdc1aef6e9e1400d2b8909fe017ee86b7aa416ff64192abb",
+    "examples/representation_study.py": "deebd232a56a253362b1a17d0fc7a0a4a9e4bd421058359a1aaeb728d5f1bfca"
+  },
+  "version": "0.1.0.dev1"
+}

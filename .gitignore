@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+build_checks/
+dist/
+*.egg-info/
+build_verification.json
+PAPER_DRAFT.md
+writer.lock

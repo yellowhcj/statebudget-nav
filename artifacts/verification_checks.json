@@ -1,0 +1,44 @@
+{
+  "recorded_utc": "2026-10-24T05:44:48.702683+00:00",
+  "evidence_type": "observed tool results from this research session, not synthetic JUnit output",
+  "checks": [
+    {
+      "command": "python -B -m pytest tests -q",
+      "cwd": "software",
+      "observed_output": "16 passed in 11.82s"
+    },
+    {
+      "command": "python -B -m pytest research/test_contract.py research/test_night.py research/test_public_api.py -q",
+      "cwd": "review",
+      "observed_output": "82 passed in 7.62s"
+    }
+  ],
+  "current_python_modules_matched_to_verified_wheel": 23,
+  "source_sha256": {
+    "software/statebudget_nav/analysis.py": "5b695585792db57e0909c64aeeb7828eb84ff697db0761dcded943092e1bfc32",
+    "software/statebudget_nav/audit.py": "62b0839cc422a2918e5c43a13b330aeea603a815e1ebbb988026911126e46ae3",
+    "software/statebudget_nav/batch.py": "3ec2bd0c47aa205c90115e68b2f460f00933f8fa8db5160c2f4c68ecaf38b549",
+    "software/statebudget_nav/batch_worker.py": "8dd2d952b29058566355581e233ac98f72e7ec7218fca54406df73ef1af704ce",
+    "software/statebudget_nav/cli.py": "46ae39448789ec7a21b1c7b7c4fb9d75907e188e1efcf1cc4b9529f8701e9367",
+    "software/statebudget_nav/evaluation.py": "b7e1461501bf776e32654192e8574baddd98c43b89a9f55c95a9e3d580229752",
+    "software/statebudget_nav/__init__.py": "68dc6404d076eaad30c8b922f871270ab214ac22f652845efe5b47b0ac131613",
+    "software/statebudget_nav/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "software/statebudget_nav/examples/audit_faults.py": "6eaaef9e245bead878f40f9d68e1041a3246c70023637b10d95b1f9c01d6efa2",
+    "software/statebudget_nav/examples/counter.py": "c841bbb618331f36fdc1aef6e9e1400d2b8909fe017ee86b7aa416ff64192abb",
+    "software/statebudget_nav/examples/representation_study.py": "deebd232a56a253362b1a17d0fc7a0a4a9e4bd421058359a1aaeb728d5f1bfca",
+    "software/statebudget_nav/examples/__init__.py": "3579d3a22e0e24628d15fd3609497e9ec10ca509c5503ca9d629f56a1040c114",
+    "software/statebudget_nav/_core/benchmark.py": "b34870b027b3b6326e755664faf729cf2c9100e19dbe4f3b6a30e6852b46d89f",
+    "software/statebudget_nav/_core/checkpoint_worker.py": "17aed901cf49268851798f7b77d83310a9367a60435b6d725b9d1725f57fd566",
+    "software/statebudget_nav/_core/controller.py": "7b42b64c88bab33965da003e5133947461709c6d2d58aa138e94db9cdf43add0",
+    "software/statebudget_nav/_core/environments.py": "12c43d03c4c00049ea790f8dee25304d87e6a4a4227f9ae3cd87e7ce57262b7a",
+    "software/statebudget_nav/_core/face_controller.py": "6c3746fbabddd127e65399c5ec14e6e0af778a6e6cf657bf8373a3ad074552ff",
+    "software/statebudget_nav/_core/junction_controller.py": "02de3ce76da40bb9e0c2e75a5cb4b5c2ddf8b56aafc11c5431689103c785208f",
+    "software/statebudget_nav/_core/loop_controller.py": "166ed8adf65603d3dd0b98a76751dfacc0395c0980d7e1bc44325ac73a92d380",
+    "software/statebudget_nav/_core/matched_topology.py": "621a4d699a1e49b2b5dc0e56105e15e88ea141c66814e51fb678560ec87e0a08",
+    "software/statebudget_nav/_core/public_api.py": "577c7ac33891f4f5939c249c9abadc4c2b32f1a7a94d0d6dbe91dd8f15e0a7d3",
+    "software/statebudget_nav/_core/rotor_controller.py": "8d2c7e8307fba6a8efede1daf60b422a062b728898727e8e0daa4360d47dccfd",
+    "software/statebudget_nav/_core/__init__.py": "0412bdf5fac08a4d7ac806871b6ff27e03e91a5ae7450ab7be3e8a14ca1bc659",
+    "software/tests/test_integration.py": "aa601e396288941fd955e1df2f6a3729fb4e69248760a03c9836f89fe95d17f0",
+    "software/tests/test_workflows.py": "bee4bbd99fbb5aa82e63913d00d6b91476397a27f418ae00a04b1e33c3df7847"
+  }
+}

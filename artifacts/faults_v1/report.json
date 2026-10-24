@@ -1,0 +1,89 @@
+{
+  "rows": [
+    {
+      "fixture": "hidden_action",
+      "steps": 12,
+      "expected_full_replay_pass": false,
+      "all": {
+        "passed": false,
+        "error": "checkpoint 1 replay mismatch"
+      },
+      "first_only": {
+        "passed": true,
+        "checkpoints": 1,
+        "all_passed": true,
+        "fresh_interpreter": true,
+        "stride": 16,
+        "scope": "sampled deterministic replay; not a proof of state isolation"
+      }
+    },
+    {
+      "fixture": "hidden_payload",
+      "steps": 12,
+      "expected_full_replay_pass": false,
+      "all": {
+        "passed": false,
+        "error": "checkpoint 1 replay mismatch"
+      },
+      "first_only": {
+        "passed": true,
+        "checkpoints": 1,
+        "all_passed": true,
+        "fresh_interpreter": true,
+        "stride": 16,
+        "scope": "sampled deterministic replay; not a proof of state isolation"
+      }
+    },
+    {
+      "fixture": "late_hidden_action",
+      "steps": 12,
+      "expected_full_replay_pass": false,
+      "all": {
+        "passed": false,
+        "error": "checkpoint 7 replay mismatch"
+      },
+      "first_only": {
+        "passed": true,
+        "checkpoints": 1,
+        "all_passed": true,
+        "fresh_interpreter": true,
+        "stride": 16,
+        "scope": "sampled deterministic replay; not a proof of state isolation"
+      }
+    },
+    {
+      "fixture": "compliant_counter",
+      "steps": 12,
+      "expected_full_replay_pass": true,
+      "all": {
+        "passed": true,
+        "checkpoints": 12,
+        "all_passed": true,
+        "fresh_interpreter": true,
+        "stride": 1,
+        "scope": "sampled deterministic replay; not a proof of state isolation"
+      },
+      "first_only": {
+        "passed": true,
+        "checkpoints": 1,
+        "all_passed": true,
+        "fresh_interpreter": true,
+        "stride": 16,
+        "scope": "sampled deterministic replay; not a proof of state isolation"
+      }
+    },
+    {
+      "fixture": "oversized",
+      "rejected_at_step_boundary": true,
+      "error": "controller exceeded serialized persistent payload budget"
+    },
+    {
+      "fixture": "invalid_action",
+      "rejected_at_step_boundary": true,
+      "error": "invalid MiniGrid action"
+    }
+  ],
+  "scope": "controlled fault injection, not a malicious-code security test",
+  "sampled_replay_limitation": "first-only replay passes all three hidden-state fixtures",
+  "expected_behaviors_reproduced": true
+}

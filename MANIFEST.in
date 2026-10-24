@@ -1,0 +1,2 @@
+include README.md EXTENDING.md RELATED_WORK.md
+recursive-include tests *.py

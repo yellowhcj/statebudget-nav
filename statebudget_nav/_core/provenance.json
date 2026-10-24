@@ -1,0 +1,42 @@
+{
+  "controller.py": {
+    "source": "research/controller.py",
+    "sha256": "7b42b64c88bab33965da003e5133947461709c6d2d58aa138e94db9cdf43add0"
+  },
+  "environments.py": {
+    "source": "research/environments.py",
+    "sha256": "12c43d03c4c00049ea790f8dee25304d87e6a4a4227f9ae3cd87e7ce57262b7a"
+  },
+  "matched_topology.py": {
+    "source": "research/matched_topology.py",
+    "sha256": "621a4d699a1e49b2b5dc0e56105e15e88ea141c66814e51fb678560ec87e0a08"
+  },
+  "junction_controller.py": {
+    "source": "research/junction_controller.py",
+    "sha256": "02de3ce76da40bb9e0c2e75a5cb4b5c2ddf8b56aafc11c5431689103c785208f"
+  },
+  "loop_controller.py": {
+    "source": "research/loop_controller.py",
+    "sha256": "166ed8adf65603d3dd0b98a76751dfacc0395c0980d7e1bc44325ac73a92d380"
+  },
+  "rotor_controller.py": {
+    "source": "research/rotor_controller.py",
+    "sha256": "8d2c7e8307fba6a8efede1daf60b422a062b728898727e8e0daa4360d47dccfd"
+  },
+  "face_controller.py": {
+    "source": "research/face_controller.py",
+    "sha256": "6c3746fbabddd127e65399c5ec14e6e0af778a6e6cf657bf8373a3ad074552ff"
+  },
+  "public_api.py": {
+    "source": "research/public_api.py",
+    "sha256": "577c7ac33891f4f5939c249c9abadc4c2b32f1a7a94d0d6dbe91dd8f15e0a7d3"
+  },
+  "checkpoint_worker.py": {
+    "source": "research/checkpoint_worker.py",
+    "sha256": "17aed901cf49268851798f7b77d83310a9367a60435b6d725b9d1725f57fd566"
+  },
+  "benchmark.py": {
+    "source": "research/benchmark.py",
+    "sha256": "b34870b027b3b6326e755664faf729cf2c9100e19dbe4f3b6a30e6852b46d89f"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "statebudget.summary.v1",
+  "episodes": 96,
+  "seeded_instances": 32,
+  "physical_tasks_by_environment_and_view": 32,
+  "partial": false,
+  "identical_task_sets_within_observation_and_action_limits": true,
+  "aggregation": "agent repeats within seed; duplicate physical layouts within condition; no p values",
+  "summaries": [
+    {
+      "env": "MiniGrid-MultiRoom-N6-v0",
+      "view": 7,
+      "limit": 600,
+      "policy": "compressed",
+      "budget": 112,
+      "selector": "nearest",
+      "unique_physical_tasks": 32,
+      "mean_success": 1,
+      "mean_actions": 59.875,
+      "max_state_bytes": 101,
+      "agent_repeat_sets": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "env": "MiniGrid-MultiRoom-N6-v0",
+      "view": 7,
+      "limit": 600,
+      "policy": "history_lru",
+      "budget": 112,
+      "selector": "nearest",
+      "unique_physical_tasks": 32,
+      "mean_success": 0,
+      "mean_actions": 600,
+      "max_state_bytes": 112,
+      "agent_repeat_sets": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "env": "MiniGrid-MultiRoom-N6-v0",
+      "view": 7,
+      "limit": 600,
+      "policy": "lru",
+      "budget": 112,
+      "selector": "nearest",
+      "unique_physical_tasks": 32,
+      "mean_success": 0.75,
+      "mean_actions": 201.5625,
+      "max_state_bytes": 112,
+      "agent_repeat_sets": [
+        [
+          1
+        ]
+      ]
+    }
+  ]
+}

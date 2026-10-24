@@ -1,0 +1,35 @@
+{
+  "configuration": {
+    "agent_seed": 1,
+    "budget": 112,
+    "env": "MiniGrid-MultiRoom-N6-v0",
+    "limit": 600,
+    "policy": "lru",
+    "seed": 10013,
+    "selector": "nearest",
+    "view": 7
+  },
+  "result": {
+    "agent_seed": 1,
+    "branch_cells": 97,
+    "budget": 112,
+    "cpu_ms": 250.0,
+    "env": "MiniGrid-MultiRoom-N6-v0",
+    "face_merges": 0,
+    "layout_hash": "913d944788e5a0d19a3be2ad67764b704f816e494d348567c78eee7d819b04e1",
+    "limit": 600,
+    "loops_detected": 0,
+    "max_state_bytes": 112,
+    "oracle_cells": 33,
+    "policy": "lru",
+    "reachable_area": 119,
+    "seed": 10013,
+    "selector": "nearest",
+    "steps": 76,
+    "success": 1,
+    "trajectory_hash": "f6af707f9b46fd9408937ce8294db59408c4d3614b07d6bf60f78e2c9e75ba9e",
+    "view": 7,
+    "world_hash": "7c618b43287ead35a11b262e4aad8160d4c2dd7edbf5401aa8cd22bb31df9979"
+  },
+  "result_sha256": "2e51c8143be0695b0b6f80d2b3ef4dfcb87876433ec1246331643fe4b7a36e4b"
+}
