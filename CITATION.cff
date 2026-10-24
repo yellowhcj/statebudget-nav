@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use StateBudget-Nav, please cite the accompanying software paper and this repository."
+type: software
+title: "StateBudget-Nav"
+abstract: "A Python toolkit for comparing symbolic navigation controllers under an explicit serialized persistent-state budget, with frozen-source experiments and restart audits."
+version: 0.1.0.dev3
+repository-code: "https://github.com/yellowhcj/statebudget-nav"
+license: MIT
+authors:
+  - name: "yellowhcj"
+keywords:
+  - navigation
+  - reproducibility
+  - persistent state
+  - research software

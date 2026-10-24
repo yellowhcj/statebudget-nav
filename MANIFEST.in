@@ -1,2 +1,3 @@
 include README.md EXTENDING.md RELATED_WORK.md
+include LICENSE Licence.txt CHANGELOG.md CITATION.cff RELEASE_CHECKLIST.md REUSE_TEST.md
 recursive-include tests *.py

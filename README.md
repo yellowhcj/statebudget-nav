@@ -1,6 +1,6 @@
 # StateBudget-Nav
 
-A Python toolkit for comparing symbolic navigation controllers under a serialized persistent-state payload budget. The public repository is [github.com/yellowhcj/statebudget-nav](https://github.com/yellowhcj/statebudget-nav). A software license still needs to be selected before treating this as a broadly reusable release.
+A Python toolkit for comparing symbolic navigation controllers under a serialized persistent-state payload budget. The public repository is [github.com/yellowhcj/statebudget-nav](https://github.com/yellowhcj/statebudget-nav) and the package is released under the [MIT License](LICENSE).
 
 ## Quick start
 
@@ -84,5 +84,9 @@ python -m pip wheel . --no-index --no-deps --no-build-isolation --wheel-dir dist
 ```
 
 The clean-wheel report records the actual dependency versions and build hash. Only that environment has been exercised; declared minimum versions are dependency constraints, not a cross-platform test matrix.
+
+## Citation and release notes
+
+Citation metadata is in [CITATION.cff](CITATION.cff), and version changes are recorded in [CHANGELOG.md](CHANGELOG.md). The MIT license permits reuse with the copyright and license notice preserved. The account-name copyright holder should be replaced with final legal or institutional attribution if the submitting author requires that form.
 
 POPGym already compares memory models with equal recurrent-state dimensions; Memory Gym already supplies memory-focused decision tasks. This toolkit is scoped to byte-accounted symbolic navigation and audit artifacts. It does not claim to be the first memory benchmark, to reproduce those libraries, or to beat their learned policies.
