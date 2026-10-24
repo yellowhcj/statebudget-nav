@@ -9,6 +9,7 @@ Requires Python 3.10 or later. From a fresh clone, install the project and its d
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip setuptools wheel
 python -m pip install -e ".[test]" --no-build-isolation
 python -m pytest tests -q
 python -m statebudget_nav run --env MiniGrid-FourRooms-v0 --policy compressed --budget 64 --trace runs/trace.jsonl --output runs/result.json
