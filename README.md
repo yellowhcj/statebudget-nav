@@ -1,6 +1,6 @@
 # StateBudget-Nav
 
-A Python toolkit for comparing symbolic navigation controllers under a serialized persistent-state payload budget. This repository candidate is a local development snapshot; its public URL and software license have not yet been set.
+A Python toolkit for comparing symbolic navigation controllers under a serialized persistent-state payload budget. The public repository is [github.com/yellowhcj/statebudget-nav](https://github.com/yellowhcj/statebudget-nav). A software license still needs to be selected before treating this as a broadly reusable release.
 
 ## Quick start
 
