@@ -9,7 +9,7 @@ Requires Python 3.10 or later. From a fresh clone, install the project and its d
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install -e ".[test]"
+python -m pip install -e ".[test]" --no-build-isolation
 python -m pytest tests -q
 python -m statebudget_nav run --env MiniGrid-FourRooms-v0 --policy compressed --budget 64 --trace runs/trace.jsonl --output runs/result.json
 python -m statebudget_nav audit runs/trace.jsonl --fresh-process --stride 10
@@ -17,7 +17,7 @@ python -m statebudget_nav audit runs/trace.jsonl --fresh-process --stride 10
 
 The `runs` directory must not already exist. On macOS or Linux, activate the environment with `source .venv/bin/activate`. The audit checks recorded decisions in a fresh interpreter; it does not prove that all possible hidden state is absent.
 
-For a faster install check without setting up a virtual environment, run `python -m pip install -e ".[test]"` in an environment where the declared dependencies are already available. Network access is needed only if pip must download missing dependencies.
+For a faster install check without setting up a virtual environment, run `python -m pip install -e ".[test]" --no-build-isolation` in an environment where the declared dependencies and a build backend are already available. Network access is needed if pip must download missing dependencies; the `--no-build-isolation` option avoids a separate build-tool download when those tools are already installed.
 
 The controller sees only current visible cells, accurate position/orientation, and immutable public configuration. Its entire declared cross-step state is a `bytes` value. Goals, PRNG state, scan modes, cache order, counters and representation metadata must fit the same budget. Transient planning workspace, Python object overhead, immutable configuration and interpreter memory are outside this budget. **It is not a process-RAM limit or hostile-code sandbox.**
 
