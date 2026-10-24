@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "statebudget-nav"
-version = "0.1.0.dev3"
+version = "0.1.0.dev4"
 description = "Explicit serialized persistent-state budgets and restart audits for navigation research"
 readme = "README.md"
 license = {file = "LICENSE"}

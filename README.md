@@ -87,6 +87,6 @@ The clean-wheel report records the actual dependency versions and build hash. On
 
 ## Citation and release notes
 
-Citation metadata is in [CITATION.cff](CITATION.cff), and version changes are recorded in [CHANGELOG.md](CHANGELOG.md). The MIT license permits reuse with the copyright and license notice preserved. The account-name copyright holder should be replaced with final legal or institutional attribution if the submitting author requires that form.
+Citation metadata is in [CITATION.cff](CITATION.cff), and version changes are recorded in [CHANGELOG.md](CHANGELOG.md). The MIT license permits reuse with the copyright and license notice preserved. The copyright holder is Chongjun Huang.
 
 POPGym already compares memory models with equal recurrent-state dimensions; Memory Gym already supplies memory-focused decision tasks. This toolkit is scoped to byte-accounted symbolic navigation and audit artifacts. It does not claim to be the first memory benchmark, to reproduce those libraries, or to beat their learned policies.

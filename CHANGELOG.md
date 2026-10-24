@@ -1,10 +1,13 @@
 # Changelog
 
-## 0.1.0.dev3
+## 0.1.0.dev4
 
 - Added the MIT license and publication metadata.
 - Documented the clean virtual-environment build prerequisites.
 - Recorded the public GitHub repository and low-prompt reuse protocol.
+- Added final single-author contact and affiliation metadata for the release candidate.
+
+## 0.1.0.dev3
 
 ## Unreleased
 

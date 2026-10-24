@@ -11,8 +11,8 @@ school recognition.
 - [x] Package tests pass locally (16 tests).
 - [x] Clean wheel, navigation example, and fresh-process audit recorded.
 - [x] Independent AI-agent reuse report recorded separately from developer notes.
-- [ ] Replace the account-name copyright holder with the final legal or
-      institutional attribution if required.
-- [ ] Add final author names, affiliations, support email, and DOI archive.
+- [x] Replace the account-name copyright holder with the supplied author name.
+- [x] Add the supplied author name, affiliation, and support email.
+- [ ] Add DOI archive.
 - [ ] Recheck journal indexing and warning-list status at submission.
-- [ ] Build and upload a tagged release only after the author metadata is final.
+- [ ] Build and upload a tagged release after final checks and author approval.

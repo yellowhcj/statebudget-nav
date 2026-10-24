@@ -1,5 +1,5 @@
 {
-  "recorded_utc": "2026-10-24T15:52:30.514774+00:00",
+  "recorded_utc": "2026-10-24T16:15:48.868072+00:00",
   "evidence_type": "observed tool results from this research session, not synthetic JUnit output",
   "checks": [
     {
@@ -21,7 +21,7 @@
     "software/statebudget_nav/batch_worker.py": "8dd2d952b29058566355581e233ac98f72e7ec7218fca54406df73ef1af704ce",
     "software/statebudget_nav/cli.py": "46ae39448789ec7a21b1c7b7c4fb9d75907e188e1efcf1cc4b9529f8701e9367",
     "software/statebudget_nav/evaluation.py": "b7e1461501bf776e32654192e8574baddd98c43b89a9f55c95a9e3d580229752",
-    "software/statebudget_nav/__init__.py": "f2a8bcb6f17ddd9383dfab9680140dfa79da3f4933a0308fc62a7afe94a79e2f",
+    "software/statebudget_nav/__init__.py": "a3b7b50e60b450ec3cb033f91d583a01e775f1051f1d0933f5aa827df8f52d9d",
     "software/statebudget_nav/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
     "software/statebudget_nav/examples/audit_faults.py": "6eaaef9e245bead878f40f9d68e1041a3246c70023637b10d95b1f9c01d6efa2",
     "software/statebudget_nav/examples/counter.py": "c841bbb618331f36fdc1aef6e9e1400d2b8909fe017ee86b7aa416ff64192abb",

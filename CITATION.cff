@@ -3,11 +3,14 @@ message: "If you use StateBudget-Nav, please cite the accompanying software pape
 type: software
 title: "StateBudget-Nav"
 abstract: "A Python toolkit for comparing symbolic navigation controllers under an explicit serialized persistent-state budget, with frozen-source experiments and restart audits."
-version: 0.1.0.dev3
+version: 0.1.0.dev4
 repository-code: "https://github.com/yellowhcj/statebudget-nav"
 license: MIT
 authors:
-  - name: "yellowhcj"
+  - given-names: "Chongjun"
+    family-names: "Huang"
+    email: "2090242538@qq.com"
+    affiliation: "Hangzhou Dianzi University"
 keywords:
   - navigation
   - reproducibility
