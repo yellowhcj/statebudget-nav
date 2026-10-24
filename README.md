@@ -73,6 +73,8 @@ The example intentionally injects hidden global counters that alter actions or r
 
 New trusted controllers can use `python:importable.module:function` in single-episode runs and checkpoint audits. The callable receives `(frame, state_bytes, specification)` and returns `(action, new_state_bytes, diagnostics)`. See [EXTENDING.md](EXTENDING.md). This loads local Python code with normal process permissions and is intended for reviewed research implementations.
 
+See [REUSE_TEST.md](REUSE_TEST.md) for a protocol to test installation and use from a clean checkout. A successful AI-agent run is an agent-based usability check; it is not evidence of human adoption or independent scientific validation.
+
 Local validation:
 
 ```text
