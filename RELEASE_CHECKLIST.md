@@ -16,5 +16,5 @@ school recognition.
 - [ ] Add DOI archive.
 - [ ] Recheck journal indexing and warning-list status at submission.
 - [x] dev5 wheel and source distribution built locally; the release candidate includes the custom-grid example.
-- [ ] Public dev5 tag verified from a separate clone.
+- [x] Public dev5 tag verified from a separate clone (commit b326eeb66a06a3fdb8e08bc82da244272c02b235): 17 tests pass; custom-grid all-decision replay passes 89/89; source and trace fingerprints preserved. This is author verification with existing dependencies, not independent human reuse.
 - [ ] Create a GitHub Release / permanent DOI archive if chosen; a Git tag alone is not DOI archiving.

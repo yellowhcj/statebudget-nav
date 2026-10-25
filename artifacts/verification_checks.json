@@ -11,10 +11,10 @@
         "-q"
       ],
       "cwd": "software",
-      "started_utc": "2026-10-25T05:46:43.869322+00:00",
-      "finished_utc": "2026-10-25T05:47:07.198337+00:00",
+      "started_utc": "2026-10-25T06:00:40.792085+00:00",
+      "finished_utc": "2026-10-25T06:01:05.274488+00:00",
       "returncode": 0,
-      "stdout": ".................                                                        [100%]\n17 passed in 21.71s\n",
+      "stdout": ".................                                                        [100%]\n17 passed in 22.55s\n",
       "stderr": ""
     },
     {
@@ -29,10 +29,10 @@
         "-q"
       ],
       "cwd": ".",
-      "started_utc": "2026-10-25T05:47:07.198337+00:00",
-      "finished_utc": "2026-10-25T05:47:18.356141+00:00",
+      "started_utc": "2026-10-25T06:01:05.275616+00:00",
+      "finished_utc": "2026-10-25T06:01:18.062474+00:00",
       "returncode": 0,
-      "stdout": "........................................................................ [ 87%]\n..........                                                               [100%]\n82 passed in 9.71s\n",
+      "stdout": "........................................................................ [ 87%]\n..........                                                               [100%]\n82 passed in 11.16s\n",
       "stderr": ""
     }
   ],
@@ -81,7 +81,7 @@
     "research/environments.py": "12c43d03c4c00049ea790f8dee25304d87e6a4a4227f9ae3cd87e7ce57262b7a",
     "research/face_controller.py": "6c3746fbabddd127e65399c5ec14e6e0af778a6e6cf657bf8373a3ad074552ff",
     "research/face_merging_probe.py": "a471caf48cf6e5ba9c491fd57bc8e0a917ad8c707eacad162a85de95b11a380b",
-    "research/finalize_research_packet.py": "1360e2f01856ac5f64712bd343c31bf98d0a136898f1c38fbbd5a058c63205eb",
+    "research/finalize_research_packet.py": "e83abd440a6afd178df993f9e052bd79ca006c4ce1e7a9df154a9f7b0c8accb2",
     "research/inspect_mjl.py": "5c9402fd4aa19d78bb08fd8fbf372da5df047ecd90fff87db37cfaafceffba9d",
     "research/inspect_sources.py": "e605cd3d6e440e51c34fb67ef5db22f242be07620f99c211e9209d9e6f6768eb",
     "research/junction_controller.py": "02de3ce76da40bb9e0c2e75a5cb4b5c2ddf8b56aafc11c5431689103c785208f",
