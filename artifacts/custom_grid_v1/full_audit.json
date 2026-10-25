@@ -1,0 +1,9 @@
+{
+  "command": "python -B -m statebudget_nav audit artifacts/custom_grid_v1/trace.jsonl --fresh-process",
+  "checkpoints": 89,
+  "all_passed": true,
+  "fresh_interpreter": true,
+  "stride": 1,
+  "scope": "all recorded decisions of this author-provided example; not a proof of state isolation",
+  "trace_sha256": "8319e748704a5d5b8ce46112072967ad74be5f15689232c116eab80ce81934dd"
+}

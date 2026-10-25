@@ -1,0 +1,18 @@
+{
+  "example": "author-provided custom grid and plugin",
+  "environment": "radius-one cross sensor, known pose, static grid",
+  "steps": 89,
+  "success": true,
+  "budget": 4,
+  "max_state_bytes": 4,
+  "world_sha256": "659a1209d50087609ca4439c74dc13b55030f5d69614ace5bf5215890d00a44f",
+  "plugin_sha256": "4f90687638acf093894850b44f00c409601788571874760adb9204c54a03fa7a",
+  "trace_sha256": "8319e748704a5d5b8ce46112072967ad74be5f15689232c116eab80ce81934dd",
+  "audit": {
+    "checkpoints": 9,
+    "all_passed": true,
+    "fresh_interpreter": true,
+    "stride": 10,
+    "scope": "sampled deterministic replay; not a proof of state isolation"
+  }
+}

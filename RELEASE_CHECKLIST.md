@@ -8,11 +8,13 @@ school recognition.
 - [x] MIT license files included as `LICENSE` and `Licence.txt` for GitHub and publisher-template compatibility.
 - [x] Package metadata names the repository and license.
 - [x] Changelog and citation metadata included.
-- [x] Package tests pass locally (16 tests).
+- [x] Package tests pass locally (17 tests, including the custom sensor/plugin path).
 - [x] Clean wheel, navigation example, and fresh-process audit recorded.
 - [x] Independent AI-agent reuse report recorded separately from developer notes.
 - [x] Replace the account-name copyright holder with the supplied author name.
 - [x] Add the supplied author name, affiliation, and support email.
 - [ ] Add DOI archive.
 - [ ] Recheck journal indexing and warning-list status at submission.
-- [ ] Build and upload a tagged release after final checks and author approval.
+- [x] dev5 wheel and source distribution built locally; the release candidate includes the custom-grid example.
+- [ ] Public dev5 tag verified from a separate clone.
+- [ ] Create a GitHub Release / permanent DOI archive if chosen; a Git tag alone is not DOI archiving.

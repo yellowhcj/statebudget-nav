@@ -1,5 +1,7 @@
 # StateBudget-Nav
 
+For the complete installation-to-output workflow and a custom sensor/controller extension, start with [WALKTHROUGH.md](WALKTHROUGH.md). This is research software for auditing declared serialized persistent state. The accompanying manuscript is a draft; no journal acceptance or human adoption is claimed.
+
 A Python toolkit for comparing symbolic navigation controllers under a serialized persistent-state payload budget. The public repository is [github.com/yellowhcj/statebudget-nav](https://github.com/yellowhcj/statebudget-nav) and the package is released under the [MIT License](LICENSE).
 
 ## Quick start

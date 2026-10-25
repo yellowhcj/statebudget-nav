@@ -1,0 +1,4 @@
+# Keep Python source fingerprints stable on Windows and Unix checkouts.
+*.py text eol=lf
+# Trace fingerprints identify exact output bytes, including line endings.
+*.jsonl -text

@@ -1,5 +1,7 @@
 # Adding a controller
 
+For an executable sensor adapter and a navigational plugin, run `python -m statebudget_nav.examples.custom_grid runs/custom-grid`. Read `examples/custom_grid.py` for the evaluator-owned world and local sensor mapping, and `examples/local_walk.py` for a controller retaining only four PRNG bytes. See [WALKTHROUGH.md](WALKTHROUGH.md) for expected outputs and replay commands. This author-provided grid example demonstrates the extension boundary; it is not a real-robot or independent-user validation.
+
 Implement an importable Python function with this signature:
 
 ```python

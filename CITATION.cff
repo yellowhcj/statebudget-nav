@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "If you use StateBudget-Nav, please cite the accompanying software paper and this repository."
+message: "If you use StateBudget-Nav, please cite this versioned repository. The accompanying manuscript is not yet published."
 type: software
 title: "StateBudget-Nav"
 abstract: "A Python toolkit for comparing symbolic navigation controllers under an explicit serialized persistent-state budget, with frozen-source experiments and restart audits."
-version: 0.1.0.dev4
+version: 0.1.0.dev5
 repository-code: "https://github.com/yellowhcj/statebudget-nav"
 license: MIT
 authors:
