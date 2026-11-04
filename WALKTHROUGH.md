@@ -1,12 +1,15 @@
 # From a clean checkout to an auditable result
 
-Use Python 3.10 or newer; the exercised environment is Windows/Python 3.12.7. This does not establish support for every dependency version or platform. GitHub and the Python package index must be reachable; configure any needed proxy for your machine.
+Use Python 3.10 or newer. The dev7 release has been exercised on Windows/Python 3.12.7; its CI also passes on Ubuntu and Windows with Python 3.10 and 3.12. This does not establish support for every dependency version or platform. GitHub and the Python package index must be reachable; configure any needed proxy for your machine.
+
+These instructions describe package version `0.1.0.dev7`. Obtain the current documentation with the clone below and record `git rev-parse HEAD`. For a requested fixed snapshot, check out the supplied commit before installation. The historical `v0.1.0-dev7` release tag preserves the originally released source and documentation; later documentation corrections do not move that tag.
 
 ## 1. Obtain and install
 
 ```text
-git clone --branch v0.1.0-dev5 --depth 1 https://github.com/yellowhcj/statebudget-nav.git
+git clone https://github.com/yellowhcj/statebudget-nav.git
 cd statebudget-nav
+git rev-parse HEAD
 python -m venv .venv
 ```
 
@@ -15,10 +18,11 @@ On PowerShell activate with `.venv\Scripts\Activate.ps1`; on Linux/macOS use `so
 ```text
 python -m pip install --upgrade pip setuptools wheel
 python -m pip install -e ".[test]" --no-build-isolation
+python -m pip install -e external_examples/navmemory_example --no-build-isolation --no-deps
 python -m pytest tests -q
 ```
 
-The suite has 17 checks. If pytest cannot write to its default temporary directory, add `--basetemp .pytest_tmp_run1`, selecting a new disposable path: pytest may clear an existing basetemp directory. Build prerequisites are deliberate; an earlier independent agent needed setuptools/wheel before installation succeeded.
+With the separate example installed, the suite has 28 tests. Without that optional example, two related tests are skipped. If pytest cannot write to its default temporary directory, add `--basetemp .pytest_tmp_run1`, selecting a new disposable path: pytest may clear an existing basetemp directory. Build prerequisites are deliberate; an earlier independent agent needed setuptools/wheel before installation succeeded.
 
 ## 2. Run, inspect and replay
 
