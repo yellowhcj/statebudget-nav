@@ -2,6 +2,7 @@
 import base64
 import hashlib
 import json
+import gzip
 from pathlib import Path
 from . import replay_checkpoint
 
@@ -9,7 +10,9 @@ from . import replay_checkpoint
 def audit_trace(path,fresh_process=True,stride=1):
     if type(stride) is not int or stride<1:raise ValueError('stride must be positive')
     checked=0
-    with Path(path).open(encoding='utf-8') as stream:
+    path=Path(path)
+    opener=gzip.open if path.suffix=='.gz' else open
+    with opener(path,'rt',encoding='utf-8') as stream:
         for i,line in enumerate(stream):
             if i%stride:continue
             event=json.loads(line);actual=replay_checkpoint(event,fresh_process)

@@ -4,10 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 from . import replay_checkpoint
-from .evaluation import run_episode
 from .audit import audit_trace
-from .batch import create_batch,run_batch,verify_batch
-from .analysis import summarize_batch
 
 
 def main():
@@ -30,8 +27,25 @@ def main():
     verify.add_argument('directory')
     summary=sub.add_parser('summary',help='Average random repeats and duplicate physical layouts')
     summary.add_argument('directory');summary.add_argument('--allow-partial',action='store_true')
+    full=sub.add_parser('movingai',help='Run an adapted4-way task with official map/scenario endpoints')
+    full.add_argument('--map',required=True);full.add_argument('--scenarios',required=True);full.add_argument('--output',required=True)
+    selection=full.add_mutually_exclusive_group(required=True)
+    selection.add_argument('--line',type=int);selection.add_argument('--quantile',type=float)
+    full.add_argument('--policy',default='walls',help='Built-in name or python:importable.module:function')
+    full.add_argument('--initial-state',help='Binary initial payload, required for external controllers; all bytes count')
+    full.add_argument('--budget',type=int,default=1024);full.add_argument('--view',type=int,default=7)
+    full.add_argument('--movement-multiplier',type=float,default=6)
+    native=sub.add_parser('build-native',help='Compile the optional full-map search backend')
+    native.add_argument('output');native.add_argument('--compiler')
+    compare=sub.add_parser('movingai-summary',help='Summarize complete adapted runs and preserve task identities')
+    compare.add_argument('directories',nargs='+')
+    fetch=sub.add_parser('movingai-fetch',help='Download one map and its official scenarios with provenance')
+    fetch.add_argument('--map-url',required=True);fetch.add_argument('--scenario-url',required=True);fetch.add_argument('--output',required=True)
+    verify_scen=sub.add_parser('movingai-verify',help='Reproduce one original8-way scenario distance')
+    verify_scen.add_argument('--map',required=True);verify_scen.add_argument('--scenarios',required=True);verify_scen.add_argument('--line',required=True,type=int)
     args=parser.parse_args()
     if args.command=='run':
+        from .evaluation import run_episode
         if args.limit<1 or args.view<3 or args.view%2!=1:parser.error('positive limit and odd view >=3 required')
         result=run_episode(args.env,args.seed,args.policy,args.budget,args.limit,args.view,
                            args.selector,args.agent_seed,args.trace)
@@ -42,10 +56,33 @@ def main():
         if args.stride<1:parser.error('stride must be positive')
         result=audit_trace(args.trace,args.fresh_process,args.stride)
     elif args.command=='batch':
+        from .batch import create_batch,run_batch
         if args.jobs:create_batch(args.directory,json.loads(Path(args.jobs).read_text(encoding='utf-8')))
         result=run_batch(args.directory,args.max_jobs)
-    elif args.command=='verify':result=verify_batch(args.directory)[1]
-    else:result=summarize_batch(args.directory,args.allow_partial)
+    elif args.command=='verify':
+        from .batch import verify_batch
+        result=verify_batch(args.directory)[1]
+    elif args.command=='summary':
+        from .analysis import summarize_batch
+        result=summarize_batch(args.directory,args.allow_partial)
+    elif args.command=='movingai':
+        from .movingai import run as run_movingai
+        initial=Path(args.initial_state).read_bytes() if args.initial_state else None
+        result=run_movingai(args.map,args.scenarios,args.output,args.policy,args.budget,args.line,args.quantile,args.view,args.movement_multiplier,initial)
+    elif args.command=='build-native':
+        from .movingai import build_native
+        result=build_native(args.output,args.compiler)
+    elif args.command=='movingai-fetch':
+        from .movingai import fetch
+        result=fetch(args.map_url,args.scenario_url,args.output)
+    elif args.command=='movingai-verify':
+        from .movingai import load_map,load_scenarios,select,verify_distance8
+        grid=load_map(args.map);scene=select(load_scenarios(args.scenarios,grid),line=args.line)
+        value=verify_distance8(grid,scene)
+        result=dict(original_line=scene.line,published_distance=scene.official_distance,reproduced_distance=value,all_passed=True,convention='official8-way diagonal sqrt2 without corner cutting')
+    else:
+        from .movingai import report
+        result=report(args.directories)
     print(json.dumps(result,indent=2))
 
 

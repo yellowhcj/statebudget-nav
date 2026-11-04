@@ -25,7 +25,8 @@ class ControllerSpec:
     def __post_init__(self):
         if any(type(v) is not int for v in [self.width,self.height,self.budget,self.agent_seed]):
             raise ValueError('dimensions, budget and PRNG initialization must be integers')
-        if self.width<1 or self.height<1 or self.budget<0 or self.width*self.height>=controller.NONE:
+        limit=0xffffffff if isinstance(self.policy,str) and self.policy.startswith('python:') else controller.NONE
+        if self.width<1 or self.height<1 or self.budget<0 or self.width*self.height>=limit:
             raise ValueError('invalid public dimensions or budget')
         if not 0<=self.agent_seed<=0xffffffff:raise ValueError('invalid PRNG initialization')
 

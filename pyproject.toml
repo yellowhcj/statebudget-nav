@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "statebudget-nav"
-version = "0.1.0.dev5"
+version = "0.1.0.dev7"
 description = "Explicit serialized persistent-state budgets and restart audits for navigation research"
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -36,4 +36,4 @@ include = ["statebudget_nav", "statebudget_nav._core", "statebudget_nav.examples
 namespaces = false
 
 [tool.setuptools.package-data]
-"statebudget_nav._core" = ["provenance.json"]
+"statebudget_nav._core" = ["provenance.json", "fullmap_search.cpp"]

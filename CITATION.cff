@@ -3,7 +3,7 @@ message: "If you use StateBudget-Nav, please cite this versioned repository. The
 type: software
 title: "StateBudget-Nav"
 abstract: "A Python toolkit for comparing symbolic navigation controllers under an explicit serialized persistent-state budget, with frozen-source experiments and restart audits."
-version: 0.1.0.dev5
+version: 0.1.0.dev7
 repository-code: "https://github.com/yellowhcj/statebudget-nav"
 license: MIT
 authors:
@@ -16,3 +16,5 @@ keywords:
   - reproducibility
   - persistent state
   - research software
+date-released: 2026-11-04
+url: "https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev7"

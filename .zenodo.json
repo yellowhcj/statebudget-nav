@@ -1,0 +1,26 @@
+{
+  "title": "StateBudget-Nav: byte-accounted controller state and reproducible navigation audits",
+  "upload_type": "software",
+  "description": "A Python toolkit for symbolic navigation research with explicit serialized persistent-state budgets, source/task identities and fresh-interpreter decision replay. Includes MiniGrid and adapted MovingAI interfaces and a separate sparse-map controller example.",
+  "creators": [
+    {
+      "name": "Huang, Chongjun",
+      "affiliation": "Hangzhou Dianzi University"
+    }
+  ],
+  "version": "0.1.0.dev7",
+  "license": "MIT",
+  "keywords": [
+    "navigation",
+    "reproducibility",
+    "persistent state",
+    "research software"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/yellowhcj/statebudget-nav",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

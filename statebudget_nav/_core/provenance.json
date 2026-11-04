@@ -28,8 +28,13 @@
     "sha256": "6c3746fbabddd127e65399c5ec14e6e0af778a6e6cf657bf8373a3ad074552ff"
   },
   "public_api.py": {
-    "source": "research/public_api.py",
-    "sha256": "577c7ac33891f4f5939c249c9abadc4c2b32f1a7a94d0d6dbe91dd8f15e0a7d3"
+    "source": "software/statebudget_nav/_core/public_api.py",
+    "sha256": "c81f61ef3e62bcea4e3e1cdc67709f6646b1e1baa7037947bb4c2cefe5d922ab",
+    "derived_from": {
+      "source": "research/public_api.py",
+      "sha256": "577c7ac33891f4f5939c249c9abadc4c2b32f1a7a94d0d6dbe91dd8f15e0a7d3"
+    },
+    "change": "dev6 plugin-only32-bit dimension bound; legacy controller bounds unchanged"
   },
   "checkpoint_worker.py": {
     "source": "research/checkpoint_worker.py",
@@ -38,5 +43,20 @@
   "benchmark.py": {
     "source": "research/benchmark.py",
     "sha256": "b34870b027b3b6326e755664faf729cf2c9100e19dbe4f3b6a30e6852b46d89f"
+  },
+  "fullmap.py": {
+    "source": "software/statebudget_nav/_core/fullmap.py",
+    "sha256": "1dfcf51cdd9418e5069d9d52920e785df8ac152a1b899660d17173394b56276f",
+    "derived_from": "full-map codec/controller port with public validation and portable Python backend"
+  },
+  "fullmap_face.py": {
+    "source": "software/statebudget_nav/_core/fullmap_face.py",
+    "sha256": "6aa7a829bad9c2f7cc901c3c0186ab6ebf7816eda4358f3faa06e198e3cddef6",
+    "derived_from": "output/official_scenarios_20261103/face32.py"
+  },
+  "fullmap_search.cpp": {
+    "source": "software/statebudget_nav/_core/fullmap_search.cpp",
+    "sha256": "21ac2054cc7453fa2d659d44ceeac8225d9cf9e995443738910b439c206e8862",
+    "derived_from": "output/official_scenarios_20261103/search.cpp"
   }
 }

@@ -1,4 +1,7 @@
 include README.md EXTENDING.md RELATED_WORK.md
 include WALKTHROUGH.md EXTERNAL_USE_PROTOCOL.md USER_FEEDBACK_TEMPLATE.md
+include MOVINGAI.md
 include LICENSE Licence.txt CHANGELOG.md CITATION.cff RELEASE_CHECKLIST.md REUSE_TEST.md
 recursive-include tests *.py
+include ARCHIVING.md .zenodo.json
+recursive-include external_examples *.py *.toml *.md LICENSE

@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.1.0.dev7 (2026-11-04)
+
+- Full-map CLI accepts trusted external controllers with explicit charged initial bytes.
+- Initial payload and external entry-module source are archived before execution.
+- A separate installable sparse-map example exercises representation-independent reuse.
+- Non-numeric controller diagnostics are excluded from numeric totals; checkpoints preserve decision inputs and output digests.
+- Includes the separate optional example, install instructions, and a Windows/Ubuntu CI matrix.
+- Historical dev6 scientific evidence and public dev5 identity remain distinct.
+- This release integrates tooling; it introduces no new navigation algorithm.
+
+## 0.1.0.dev6 (local candidate)
+
+- Added32-bit coordinates for trusted importable plugins; bundled16-bit policies retain their existing bounds.
+- Added a MovingAI map/scenario adapter, original-row selection, local-observation evaluation and task identities.
+- Added conventional raster LRU, obstacle-prioritized and face-routing examples with charged32-bit metadata.
+- Added a Python search backend and optional portable C++ source/build command.
+- Added gzip checkpoint replay and an executable full-map walkthrough.
+- This candidate has not yet been pushed or published; it does not create official benchmark scores.
+
 ## 0.1.0.dev5
 
 - Added a runnable custom-grid sensor adapter and a four-byte local-walk plugin.

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "navmemory-example"
+version = "0.1.0"
+description = "Separate sparse-map controller example for StateBudget-Nav"
+requires-python = ">=3.10"
+dependencies = ["statebudget-nav>=0.1.0.dev7"]
+license = {text = "MIT"}
+authors = [{name = "Chongjun Huang"}]
+
+[tool.setuptools]
+py-modules = ["navmemory_example"]
