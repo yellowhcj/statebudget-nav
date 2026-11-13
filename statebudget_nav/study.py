@@ -121,6 +121,7 @@ def worker(condition_path):
     t, c, budget = cfg['task'], cfg['controller'], cfg['budget']
     record = {k: cfg[k] for k in ('run_id','task_id','controller_id','budget')}
     phase = 'preflight'
+    embedded_audit_error = None
     try:
         if t['adapter'] == 'minigrid':
             from . import ControllerSpec
@@ -153,7 +154,7 @@ def worker(condition_path):
                                  t.get('selector','nearest'),t.get('agent_seed',1),directory/'trace.jsonl')
             trace = directory/'trace.jsonl'
         else:
-            from .movingai import load_map,load_scenarios,select,distance4,run
+            from .movingai import load_map,load_scenarios,select,distance4,run,ReplayAuditError
             from ._core import fullmap
             from . import ControllerSpec
             map_path, scen_path = root/t['map'], root/t['scenarios']
@@ -180,8 +181,12 @@ def worker(condition_path):
                         raise Infeasible(str(error)) from error
                     raise
             phase = 'evaluation'
-            result = run(map_path,scen_path,directory/'episode',c['policy'],budget,line=t['line'],
-                         view=t.get('view',7),multiplier=t.get('movement_multiplier',6),initial_state=initial)
+            try:
+                result = run(map_path,scen_path,directory/'episode',c['policy'],budget,line=t['line'],
+                             view=t.get('view',7),multiplier=t.get('movement_multiplier',6),initial_state=initial)
+            except ReplayAuditError as error:
+                result = error.result
+                embedded_audit_error = error
             trace = directory/'episode/trace.jsonl.gz'
         dump(directory/'result.json',result)
         if task_identity(result) != record['task_identity'] or context(result) != record['context']:
@@ -191,6 +196,9 @@ def worker(condition_path):
                       stop_reason=result.get('stop_reason','success' if result['success'] else 'episode_ended_without_success'),
                       result='result.json',trace=trace.relative_to(directory).as_posix())
         phase = 'audit'
+        if embedded_audit_error is not None:
+            record['audit'] = result['replay_audit']
+            raise embedded_audit_error
         from . import replay_checkpoint
         events = list(trace_events(trace)); stride = cfg['audit_stride']
         if len(events)!=record['actions']:

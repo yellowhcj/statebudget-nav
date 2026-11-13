@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0.dev11 (2026-11-13)
+
+- Save completed MovingAI measurements before replay and preserve them on replay mismatch/process failure.
+- Classify completed-run replay failures as study audit errors, excluded from audited success curves.
+- Report replay status explicitly, including tasks with no decisions.
+- Align current and historical documentation/version scope without moving published tags.
+- Controller, planner, encoding and retention algorithms are unchanged.
+
 ## 0.1.0.dev10 (2026-11-13)
 
 - Normalize runtime source keys to POSIX paths on Windows and Linux.

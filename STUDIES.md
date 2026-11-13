@@ -99,7 +99,7 @@ Use separate plans for incompatible interfaces. Unknown plan keys are errors.
 | `ok` | Episode completed and recorded replay checks passed; `success` may be false. |
 | `infeasible` | A known preflight structural bound or initial-payload length prevents execution. |
 | `execution_error` | Import, controller, resource, invalid movement, timeout or other execution error. |
-| `audit_error` | A produced run failed its replay/trace check; measured outcome remains in raw records. |
+| `audit_error` | A produced run failed its replay/trace check, including MovingAI internal replay; measured outcome remains in raw records. |
 | `missing` | A declared condition has no record, for example after interruption. |
 
 Only `ok` records enter success/failure transitions. A plugin exception about

@@ -1,21 +1,19 @@
 # Version archiving
 
-Public software: `0.1.0.dev10`, MIT license, source commit
-`f4b82e0d5e420c2601e6174946944d2c5952483c`.
-https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev10
-The source ZIP, tool/example wheels and SHA256 manifest are release assets.
-Historical dev7 and privately supplied dev9 scientific records retain their own
-matching software; do not substitute the latest version in an exact-source audit.
+Software version: `0.1.0.dev11`, MIT license.
+Release: https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev11
+The immutable release tag identifies the source; source ZIP, matching tool/example
+wheels and SHA256 manifest are its release assets. Previous dev7/dev9/dev10
+artifacts remain unchanged. Historical scientific studies require their exact
+recorded software; a successor is not an exact-source replacement.
 
-No DOI is assigned by Git tags, GitHub Releases or this metadata file. A real
-Zenodo publication is required; there is deliberately no placeholder DOI badge.
-To archive this release manually, upload its exact source ZIP and two wheels to
-a Zenodo software record, using `.zenodo.json` and the source commit above.
-Verify metadata and licenses before publishing, then add the real version DOI
-to CITATION.cff, README and manuscript in an additive documentation commit.
-Never move the archived source tag or replace its assets to add a DOI.
+Git tags and GitHub releases do not assign a DOI. No Zenodo DOI is claimed here.
+For manual archiving, upload the exact release assets to a Zenodo software record
+using `.zenodo.json` and the actual source commit. Check metadata and licenses,
+publish the record, then add its real version DOI through an additive documentation
+commit. Never move a source tag or replace archived assets to add that DOI.
 
 For future automatic archiving, sign in to https://zenodo.org with GitHub and
-enable this repository before the next release. Previous releases are not
-automatically backfilled. https://help.zenodo.org/docs/github/
-A software DOI is separate from journal publication or a retrieval certificate.
+enable this repository before a new release. Previous releases are not backfilled:
+https://help.zenodo.org/docs/github/
+A software DOI is separate from a journal article or library retrieval certificate.

@@ -1,10 +1,16 @@
 # Full maps and official MovingAI scenarios
 
-The published 0.1.0.dev7 software connects the map-memory application to the public
+The MovingAI adapter introduced in dev7 connects map-memory studies to the public
 `Frame`, `ControllerSpec`, `checked_step`, checkpoint and replay interfaces.
-Trusted importable plugins can use32-bit cell indices; bundled MiniGrid policies
-retain their16-bit limit. The dev7 release is public; this dev8 successor candidate
-has not yet been pushed or released.
+Trusted importable plugins can use 32-bit cell indices; bundled MiniGrid policies
+retain their 16-bit limit. The latest public release is dev10; this source tree is
+a local dev11 successor candidate, not yet published.
+
+Completed navigation results are saved before replay auditing. A replay mismatch
+or replay process error preserves that result with `replay_audit.status="error"`
+and raises `ReplayAuditError`; the study layer records `audit_error` and excludes
+it from audited success curves. Genuine execution errors still preserve only the
+available partial artifacts. Zero-decision tasks report no replay evidence.
 
 In this candidate, `movingai-fetch` downloads and validates both archives in a
 temporary sibling directory before publishing the final input directory. A network
@@ -28,7 +34,7 @@ python -m statebudget_nav movingai-fetch --map-url https://www.movingai.com/benc
 
 The output directory must be new. Exact URL, response and extracted-file hashes
 and data attribution are saved. If the server is temporarily unavailable, retry
-in a new directory or use map/scenario files you already downloaded. Maps are
+the same uncreated destination or use map/scenario files you already downloaded. Maps are
 not bundled into or relicensed by the MIT software package.
 
 Keep the original dimensions, start, goal and direction. A task can be selected

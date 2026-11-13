@@ -30,6 +30,14 @@ from ._core import fullmap
 def sha(data):return hashlib.sha256(data).hexdigest()
 
 
+class ReplayAuditError(RuntimeError):
+    """A completed navigation run failed replay; its measured result is preserved."""
+
+    def __init__(self, message, result):
+        super().__init__(message)
+        self.result = result
+
+
 @dataclass(frozen=True)
 class Grid:
     width:int
@@ -247,13 +255,6 @@ def run(map_path,scenario_path,directory,policy='walls',budget=1024,line=None,qu
                 if not(0<=x<grid.width and 0<=y<grid.height and grid.cells[y*grid.width+x]==1):raise ValueError('controller attempted illegal movement')
                 pos=y*grid.width+x;moves+=1
             else:raise ValueError('adapted evaluator permits turn/forward actions only')
-    indices={0,actions//2,actions-1};samples=[]
-    with gzip.open(path,'rt',encoding='utf-8') as stream:
-        for k,line_text in enumerate(stream):
-            if k in indices:
-                event=json.loads(line_text);out=replay_checkpoint(event,True)
-                if out['action']!=event['expected']['action'] or sha(base64.b64decode(out['state_b64']))!=event['expected']['state_sha256']:raise ValueError('fresh replay mismatch')
-                samples.append(event)
     for p in modules:
         if sources[p.name]!=sha(p.read_bytes()):raise ValueError('source changed during run')
     if plugin_source and sources[plugin_name]!=sha(plugin_source.read_bytes()):raise ValueError('plugin source changed during run')
@@ -262,12 +263,44 @@ def run(map_path,scenario_path,directory,policy='walls',budget=1024,line=None,qu
         task=asdict(s),physical_task_sha256=task_id,map_sha256=grid.source_sha256,world_sha256=sha(grid.cells),scenario_sha256=sha(Path(scenario_path).read_bytes()),
         oracle4=d4,official_distance_verified=False,limit=limit,view=view,policy=policy,budget=budget,success=pos==s.goal,moves=moves,actions=actions,
         stop_reason='goal' if pos==s.goal else 'move_limit' if moves>=limit else 'action_limit',max_state_bytes=peak,
-        initial_state_hex=initial,initial_state_sha256=sha(bytes.fromhex(initial)),final_state_hex=state.hex(),statistics=statistics,trace_sha256=sha(path.read_bytes()),fresh_replays=len(samples),
+        initial_state_hex=initial,initial_state_sha256=sha(bytes.fromhex(initial)),final_state_hex=state.hex(),statistics=statistics,trace_sha256=sha(path.read_bytes()),fresh_replays=0,
         controller_identity=spec.policy,external_plugin=external,plugin_module_sha256=sources.get(plugin_name) if plugin_source else None,
         source_sha256=sources,native_library_sha256=sha(backend.read_bytes()) if backend else None,
         source_scope='Adapter and controller snapshots, not a complete dependency archive. Install the matching package wheel for replay.')
-    (directory/'result.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
-    (directory/'replay_samples.json').write_text(json.dumps(samples,indent=2),encoding='utf-8')
+    samples=[]
+    audit=dict(status='pending' if actions else 'no_calls',all_passed=None,
+               fresh_interpreter=True,total_calls=actions,checked_calls_one_based=[])
+    result['replay_audit']=audit
+
+    def save_result():
+        result['fresh_replays']=len(samples)
+        (directory/'result.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+        (directory/'replay_samples.json').write_text(json.dumps(samples,indent=2),encoding='utf-8')
+
+    # Save the completed measurement before auditing. A failed replay must not
+    # erase its outcome or be confused with failure to execute navigation.
+    save_result()
+    indices={0,actions//2,actions-1}
+    try:
+        with gzip.open(path,'rt',encoding='utf-8') as stream:
+            for k,line_text in enumerate(stream):
+                if k in indices:
+                    event=json.loads(line_text);out=replay_checkpoint(event,True)
+                    if out['action']!=event['expected']['action'] or sha(base64.b64decode(out['state_b64'],validate=True))!=event['expected']['state_sha256']:
+                        raise ValueError('fresh replay mismatch')
+                    samples.append(event)
+                    audit['checked_calls_one_based'].append(k+1)
+    except Exception as error:
+        audit.update(status='error',all_passed=False,error=type(error).__name__+': '+str(error))
+        save_result()
+        raise ReplayAuditError(audit['error'],result) from error
+    # Keep the original post-audit provenance guard as well as the earlier
+    # pre-save check; a replay must not hide source drift during its execution.
+    for p in modules:
+        if sources[p.name]!=sha(p.read_bytes()):raise ValueError('source changed during run')
+    if plugin_source and sources[plugin_name]!=sha(plugin_source.read_bytes()):raise ValueError('plugin source changed during run')
+    audit.update(status='passed' if actions else 'no_calls',all_passed=True if actions else None)
+    save_result()
     return result
 
 
@@ -275,4 +308,5 @@ def report(directories):
     rows=[json.loads((Path(p)/'result.json').read_bytes()) for p in directories]
     identities=[r['physical_task_sha256'] for r in rows]
     return dict(executions=len(rows),distinct_physical_tasks=len(set(identities)),not_official_scores=True,
-        rows=[{k:r[k] for k in ('physical_task_sha256','policy','budget','success','moves','oracle4','max_state_bytes','fresh_replays')} for r in rows])
+        rows=[{**{k:r[k] for k in ('physical_task_sha256','policy','budget','success','moves','oracle4','max_state_bytes','fresh_replays')},
+               'replay_audit':r.get('replay_audit',{'status':'legacy_unreported'})} for r in rows])

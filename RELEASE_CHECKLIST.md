@@ -1,20 +1,17 @@
-# dev10 release status (2026-11-13)
+# dev11 validation and remaining archive work (2026-11-13)
 
-- [x] MIT, contact metadata and serialized-persistent-state contract.
-- [x] Configurable tasks/controllers/budgets, outcome/error separation and paired diagnosis.
-- [x] Compatible source-path spelling with exact version/source/dependency/plugin checks.
-- [x] 67 tests passed in an installed Windows wheel; runtime source/wheel/install match.
-- [x] New study relocation and legacy-separator fixture passed sampled restart replay.
-- [x] Invited AI-assisted dev9 plugin continuation returned; scientific evidence is
-  preserved separately in manuscript supplement S9, with author interpretation correction.
-- [x] dev10 source, two wheels and manifest publicly released; anonymous downloads
-  matched local SHA256 values.
-- [x] GitHub CI: Windows/Ubuntu x Python3.10/3.12 all passed for the release commit.
-- [ ] Create a permanent archive and add its real DOI after publication.
-- [ ] Final manuscript/attachments and author declarations ready for journal submission.
+- [x] Save completed MovingAI measurements before replay; report audit failures separately.
+- [x] Action/state mismatch, process exception, real execution error, no-call and source-drift regressions.
+- [x] 74 installed Windows tests passed; package runtime source/wheel/install bytes match.
+- [x] 15 controller/planner/encoding/retention core files unchanged from dev10.
+- [x] Current and historical documentation versions distinguished.
+- [ ] Create a permanent software archive and add its real DOI after publication.
+- [ ] Final manuscript/attachments, authorship and journal submission checks.
 
-Release: https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev10
-CI: https://github.com/yellowhcj/statebudget-nav/actions/runs/43405525282
-Historical dev7/dev9 application results use their recorded versions. This
-release changes tooling, not controller/planner/codec/retention algorithms.
-No journal submission or acceptance is implied.
+The CI matrix is Windows/Ubuntu x Python3.10/3.12; inspect actual jobs for this
+release rather than interpreting a configured workflow as a successful run.
+Release assets and their hash manifest identify the delivered build:
+https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev11
+Historical dev7/dev9 scientific studies keep their original versions. Dev11 changes
+failure handling and documentation, not navigation algorithms or historical results.
+No journal submission, DOI or acceptance is implied.

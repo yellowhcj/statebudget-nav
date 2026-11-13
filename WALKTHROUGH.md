@@ -1,13 +1,20 @@
 # From a clean checkout to an auditable result
 
-Use Python 3.10 or newer. The dev7 release has been exercised on Windows/Python 3.12.7; its CI also passes on Ubuntu and Windows with Python 3.10 and 3.12. This does not establish support for every dependency version or platform. GitHub and the Python package index must be reachable; configure any needed proxy for your machine.
+Use Python 3.10 or newer. These general commands apply to the current source
+checkout; record its version and `git rev-parse HEAD`. This version is dev11;
+use its release tag when a fixed dev11 installation is required. Historical dev7 records below
+are retained as examples, not newly measured results from dev11.
 
-This local dev8 candidate adds failure-retry fixes; the instructions below identify
-the published dev7 baseline. Check Git, the selected Python version and pip before
-starting. If a Linux system Python is too old, choose a newer installed interpreter
-or a separate Conda environment before creating the venv; do not replace system Python.
+The dev7 release was exercised on Windows/Python 3.12.7, with its recorded CI on
+Ubuntu/Windows and Python 3.10/3.12. That historical evidence is not a dev11 platform
+validation. GitHub and the Python package index must be reachable; configure any
+needed proxy for your machine. Check Git, Python and pip before starting. Choose
+an installed Python or Conda environment >=3.10 rather than replacing system Python.
 
-These instructions describe package version `0.1.0.dev7`. Obtain the current documentation with the clone below and record `git rev-parse HEAD`. For a requested fixed snapshot, check out the supplied commit before installation. The historical `v0.1.0-dev7` release tag preserves the originally released source and documentation; later documentation corrections do not move that tag.
+For an exact historical reproduction, check out the original release tag/commit
+before installation. Historical tags and source packages are not moved by later
+documentation corrections. The commands below clone the current default branch;
+they do not automatically select a historical tag; explicitly check out the requested version before installation.
 
 ## 1. Obtain and install
 
@@ -27,7 +34,7 @@ python -m pip install -e external_examples/navmemory_example --no-build-isolatio
 python -m pytest tests -q
 ```
 
-With the separate example installed, the suite has 28 tests. Without that optional example, two related tests are skipped. If pytest cannot write to its default temporary directory, add `--basetemp .pytest_tmp_run1`, selecting a new disposable path: pytest may clear an existing basetemp directory. Build prerequisites are deliberate; an earlier independent agent needed setuptools/wheel before installation succeeded.
+Install the separate example to exercise the complete integration suite; exact test counts belong to each version’s validation receipt. If pytest cannot write to its default temporary directory, add `--basetemp .pytest_tmp_run1`, selecting a new disposable path: pytest may clear an existing basetemp directory. Build prerequisites are deliberate; an earlier independent agent needed setuptools/wheel before installation succeeded.
 
 ## 2. Run, inspect and replay
 
@@ -36,11 +43,10 @@ python -m statebudget_nav run --env MiniGrid-FourRooms-v0 --policy compressed --
 python -m statebudget_nav audit runs/trace.jsonl --fresh-process --stride 10
 ```
 
-Use new output paths. In the exercised configuration expect success, 81 actions, maximum payload 64 bytes and nine sampled replay comparisons. Timings can differ. `result.json` holds outcomes and fingerprints; `trace.jsonl` holds local frames, input bytes, specifications and expected action/state hashes. Omit `--stride 10` to check every recorded decision. Replay does not bound total RAM or prove arbitrary code has no hidden state.
+Use new output paths. The historical dev7 example recorded success, 81 actions, maximum payload 64 bytes and nine sampled replay comparisons; verify the current output rather than treating these as a new dev11 measurement. Timings can differ. `result.json` holds outcomes and fingerprints; `trace.jsonl` holds local frames, input bytes, specifications and expected action/state hashes. Omit `--stride 10` to check every recorded decision. Replay does not bound total RAM or prove arbitrary code has no hidden state.
 
 For this 19-by-19 map, `compressed` has a 26-byte structural minimum. Smaller
-budgets are invalid configurations, not failed navigation episodes. The dev8
-candidate checks this before creating a trace, so correcting the budget can reuse
+budgets are invalid configurations, not failed navigation episodes. Current source checks this before creating a trace, so correcting the budget can reuse
 the uncreated path. Existing output files are never overwritten. Errors after
 execution starts can still leave a useful partial trace; inspect it and select a
 new output path rather than deleting evidence automatically.
