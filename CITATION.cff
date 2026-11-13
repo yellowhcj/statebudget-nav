@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "If you use StateBudget-Nav, please cite this versioned repository. The accompanying manuscript is not yet published."
+message: "Cite this dev10 software version. Cite the exact archived version used. The accompanying manuscript is not yet published."
 type: software
 title: "StateBudget-Nav"
 abstract: "A Python toolkit for comparing symbolic navigation controllers under an explicit serialized persistent-state budget, with frozen-source experiments and restart audits."
-version: 0.1.0.dev7
+version: 0.1.0.dev10
 repository-code: "https://github.com/yellowhcj/statebudget-nav"
 license: MIT
 authors:
@@ -16,5 +16,4 @@ keywords:
   - reproducibility
   - persistent state
   - research software
-date-released: 2026-11-04
-url: "https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev7"
+url: "https://github.com/yellowhcj/statebudget-nav"

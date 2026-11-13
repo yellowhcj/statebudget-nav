@@ -2,6 +2,11 @@
 
 Use Python 3.10 or newer. The dev7 release has been exercised on Windows/Python 3.12.7; its CI also passes on Ubuntu and Windows with Python 3.10 and 3.12. This does not establish support for every dependency version or platform. GitHub and the Python package index must be reachable; configure any needed proxy for your machine.
 
+This local dev8 candidate adds failure-retry fixes; the instructions below identify
+the published dev7 baseline. Check Git, the selected Python version and pip before
+starting. If a Linux system Python is too old, choose a newer installed interpreter
+or a separate Conda environment before creating the venv; do not replace system Python.
+
 These instructions describe package version `0.1.0.dev7`. Obtain the current documentation with the clone below and record `git rev-parse HEAD`. For a requested fixed snapshot, check out the supplied commit before installation. The historical `v0.1.0-dev7` release tag preserves the originally released source and documentation; later documentation corrections do not move that tag.
 
 ## 1. Obtain and install
@@ -32,6 +37,18 @@ python -m statebudget_nav audit runs/trace.jsonl --fresh-process --stride 10
 ```
 
 Use new output paths. In the exercised configuration expect success, 81 actions, maximum payload 64 bytes and nine sampled replay comparisons. Timings can differ. `result.json` holds outcomes and fingerprints; `trace.jsonl` holds local frames, input bytes, specifications and expected action/state hashes. Omit `--stride 10` to check every recorded decision. Replay does not bound total RAM or prove arbitrary code has no hidden state.
+
+For this 19-by-19 map, `compressed` has a 26-byte structural minimum. Smaller
+budgets are invalid configurations, not failed navigation episodes. The dev8
+candidate checks this before creating a trace, so correcting the budget can reuse
+the uncreated path. Existing output files are never overwritten. Errors after
+execution starts can still leave a useful partial trace; inspect it and select a
+new output path rather than deleting evidence automatically.
+
+Budget can affect retention and route choice: with the fixed default settings,
+seed 10003 succeeds at 32 bytes, fails at 33, and succeeds at 34. A budget sweep
+should therefore record failures as well as the first success; more bytes do not
+guarantee success. A successful suffix describes only the tested budget range.
 
 ## 3. Connect your own sensor and controller
 

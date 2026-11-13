@@ -1,10 +1,16 @@
 # Full maps and official MovingAI scenarios
 
-The local 0.1.0.dev7 candidate connects the map-memory application to the public
+The published 0.1.0.dev7 software connects the map-memory application to the public
 `Frame`, `ControllerSpec`, `checked_step`, checkpoint and replay interfaces.
 Trusted importable plugins can use32-bit cell indices; bundled MiniGrid policies
-retain their16-bit limit. The older public tag is dev5; this local candidate
+retain their16-bit limit. The dev7 release is public; this dev8 successor candidate
 has not yet been pushed or released.
+
+In this candidate, `movingai-fetch` downloads and validates both archives in a
+temporary sibling directory before publishing the final input directory. A network
+or validation error leaves that final path available for retry. Existing output
+directories are rejected and preserved. Use one writer for a destination; a hard
+process termination can leave a temporary sibling directory for manual inspection.
 
 These examples compare serialized persistent bytes, not total robot RAM.
 Map symbols, destination, previous position, tick and tile replacement order

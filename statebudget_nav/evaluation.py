@@ -5,6 +5,7 @@ import hashlib
 import json
 import time
 from . import ControllerSpec,checked_step,checkpoint
+from ._core.public_api import implementation
 from ._core.benchmark import sensor_frame,world_stats
 from ._core.environments import make
 from ._core.matched_topology import MatchedLoopNavigation
@@ -22,6 +23,9 @@ def run_episode(env_name,seed=10000,policy='compressed',budget=64,limit=600,
     try:
         e=env.unwrapped;e.max_steps=limit;obs,_=env.reset(seed=seed)
         spec=ControllerSpec(e.width,e.height,budget,policy,selector,agent_seed)
+        # Validate bundled configuration/importability before reserving an output path.
+        # Resolve only: do not invoke the controller or advance its state.
+        implementation(spec)
         stats=world_stats(env);state=b'';trace=hashlib.sha256();max_bytes=0;cpu_ns=0
         success=False;merges=0;loops=0
         if trace_path:

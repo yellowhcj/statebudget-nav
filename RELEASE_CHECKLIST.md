@@ -1,48 +1,21 @@
-# dev7 release preparation (2026-11-04)
+# dev9 candidate release checklist
 
-The release source includes the complete-map adapter and optional separately
-installable external example. A four-job CI matrix is configured; consult its
-live result. Publication commit, release assets and remote verification are
-recorded in the release receipt, rather than inferred from this checklist.
-DOI archiving requires a published Zenodo record; see ARCHIVING.md.
+This is an unpublished candidate dated 2026-11-12. Public dev7 and its historical
+scientific evidence remain separate. No submission, DOI or public dev9 is implied.
 
-## Historical local preparation records
+- [x] MIT license, author/contact metadata and explicit persistent-state contract.
+- [x] Separate sparse-map controller distribution and research-workflow entry point.
+- [x] Existing dev8 retry fixes preserved without controller algorithm changes.
+- [x] Citation metadata describes dev9 without inventing a release date or DOI.
+- [x] Configurable study execution, reports and paired trace diagnosis in STUDIES.md.
+- [x] Installed wheel: 54 tests passed, no skips; source/wheel/installed runtime matched.
+- [x] Historical regression, external plugin study and relocated report/replay checked.
+- [ ] Actual external user's new question/extension tested and feedback preserved.
+- [ ] Publish only after the release receipt identifies the exact verified assets.
+- [ ] Create a permanent archive and insert a DOI only after actual publication.
+- [ ] Match manuscript, software version and supplementary scientific artifacts.
 
-# Separate dev7 candidate
-
-External full-map plugins, explicit initial bytes and source snapshots are validated in the accompanying S6 review artifact. dev7 has not been pushed or publicly released. Historical dev6/dev5 facts below retain their original meaning.
-
-# Local dev6 candidate status (2026-11-04)
-
-- [x] Original dev5 sources preserved before changes.
-- [x]25 current interface/workflow tests;390 frozen pilot checkpoint matches.
-- [x]156 Python-backend sample matches and130 public fresh-process checks.
-- [x] Installed wheel in isolated venv; declared dependencies downloaded by pip.
-- [x] Official map/scenario download command exercised; hashes and attribution saved.
-- [x] Python/native full trajectories matched on one official task; legacy MiniGrid CLI checked.
-- [ ] Push/tag/release dev6 and replace local candidate identity with a permanent public link.
-- [ ] Author/advisor approval, declarations, current journal qualification/guide and submission.
-
-Below records historical dev5 release facts. They do not assert that dev6 has
-already been pushed, externally adopted, assigned a DOI or submitted.
-
-# Release checklist
-
-This checklist records release facts without claiming journal acceptance or
-school recognition.
-
-- [x] Public GitHub repository: https://github.com/yellowhcj/statebudget-nav
-- [x] Main branch is pushed and can be cloned from a separate directory.
-- [x] MIT license files included as `LICENSE` and `Licence.txt` for GitHub and publisher-template compatibility.
-- [x] Package metadata names the repository and license.
-- [x] Changelog and citation metadata included.
-- [x] Package tests pass locally (17 tests, including the custom sensor/plugin path).
-- [x] Clean wheel, navigation example, and fresh-process audit recorded.
-- [x] Independent AI-agent reuse report recorded separately from developer notes.
-- [x] Replace the account-name copyright holder with the supplied author name.
-- [x] Add the supplied author name, affiliation, and support email.
-- [ ] Add DOI archive.
-- [ ] Recheck journal indexing and warning-list status at submission.
-- [x] dev5 wheel and source distribution built locally; the release candidate includes the custom-grid example.
-- [x] Public dev5 tag verified from a separate clone (commit b326eeb66a06a3fdb8e08bc82da244272c02b235): 17 tests pass; custom-grid all-decision replay passes 89/89; source and trace fingerprints preserved. This is author verification with existing dependencies, not independent human reuse.
-- [ ] Create a GitHub Release / permanent DOI archive if chosen; a Git tag alone is not DOI archiving.
+The historical dev7 release is at
+https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev7 .
+Use machine receipts for test/workflow outcomes. A configured CI matrix is not a
+claim that this candidate has run remotely. No journal acceptance is implied.

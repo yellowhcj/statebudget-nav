@@ -5,3 +5,9 @@ include LICENSE Licence.txt CHANGELOG.md CITATION.cff RELEASE_CHECKLIST.md REUSE
 recursive-include tests *.py
 include ARCHIVING.md .zenodo.json
 recursive-include external_examples *.py *.toml *.md LICENSE
+
+include RESEARCH_WORKFLOW.md
+include RELATED_WORK.md
+recursive-include tools *.py
+
+include STUDIES.md

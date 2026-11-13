@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.1.0.dev10 (2026-11-13)
+
+- Normalize runtime source keys to POSIX paths on Windows and Linux.
+- Accept legacy separators without weakening version, source, dependency or plugin checks.
+- Reject ambiguous identity paths; clarify original scenario line numbers.
+- Preserve earlier studies and require their exact matching software for replay.
+- Controller, planner, encoding and retention logic are unchanged.
+
+## 0.1.0.dev9 — study candidate
+
+- Add configurable MiniGrid/MovingAI budget plans composed from existing evaluators.
+- Preserve structural infeasibility, runtime/audit errors and incomplete conditions separately.
+- Report per-condition budget curves and paired trace divergence with observation-history scope.
+- Record portable source/input identities and support relocated reporting and sampled restart replay.
+- Controller algorithms and previously frozen scientific results are unchanged.
+
+
+## 0.1.0.dev8 (unpublished candidate, 2026-11-12)
+
+- Validates bundled controller configuration before reserving trace output.
+- Stages and validates MovingAI downloads before publishing the final destination.
+- Documents budget sensitivity, complete auxiliary-state accounting and retry behavior.
+- Adds a portable two-path research workflow, provenance receipts and direct-tool comparisons.
+- Aligns candidate citation/release metadata; historical dev7 evidence remains versioned.
+- No controller, map representation, planning or eviction algorithm is changed.
+
 ## 0.1.0.dev7 (2026-11-04)
 
 - Full-map CLI accepts trusted external controllers with explicit charged initial bytes.

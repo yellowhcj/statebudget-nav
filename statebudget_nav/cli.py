@@ -8,8 +8,13 @@ from .audit import audit_trace
 
 
 def main():
+    import sys
+    if len(sys.argv)>1 and sys.argv[1]=='study':
+        from .study import main as study_main
+        return study_main(sys.argv[2:])
     parser=argparse.ArgumentParser(prog='statebudget-nav')
     sub=parser.add_subparsers(dest='command',required=True)
+    sub.add_parser('study',help='Declared budget studies, reports and paired trace diagnostics')
     run=sub.add_parser('run',help='Run one paired, sensor-only episode')
     run.add_argument('--env',default='MiniGrid-FourRooms-v0')
     run.add_argument('--policy',default='compressed');run.add_argument('--budget',type=int,default=64)

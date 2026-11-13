@@ -18,6 +18,7 @@ import platform
 import shutil
 import subprocess
 import sys
+import tempfile
 import urllib.parse
 import urllib.request
 import zipfile
@@ -136,27 +137,35 @@ def fetch(map_url,scenario_url,directory):
         parsed=urllib.parse.urlparse(url)
         if parsed.scheme not in ('http','https') or parsed.hostname not in ('www.movingai.com','movingai.com') or not parsed.path.startswith('/benchmarks/'):
             raise ValueError('use explicit official MovingAI benchmark URLs')
-    directory=Path(directory);directory.mkdir(parents=True,exist_ok=False);records=[]
-    for url,suffix in ((map_url,'.map'),(scenario_url,'.scen')):
-        with urllib.request.urlopen(url,timeout=60) as response:
-            final_url=response.url
-            final=urllib.parse.urlparse(final_url)
-            if final.hostname not in ('www.movingai.com','movingai.com'):raise ValueError('unexpected download redirect')
-            raw=response.read()
-        archive_name='map.zip' if suffix=='.map' else 'scenario.zip'
-        (directory/archive_name).write_bytes(raw)
-        with zipfile.ZipFile(io.BytesIO(raw)) as z:
-            members=[n for n in z.namelist() if n.endswith(suffix)]
-            if len(members)!=1:raise ValueError('expected exactly one map/scenario per archive')
-            info=z.getinfo(members[0])
-            if info.file_size>64*1024*1024:raise ValueError('archive member too large')
-            content=z.read(info);name=Path(members[0].replace('\\','/')).name
-            (directory/name).write_bytes(content)
-        records.append(dict(url=url,final_url=final_url,archive=archive_name,archive_sha256=sha(raw),member=members[0],file=name,sha256=sha(content)))
-    grid=load_map(directory/records[0]['file']);load_scenarios(directory/records[1]['file'],grid)
-    receipt=dict(records=records,source='MovingAI Lab, Sturtevant2012 Benchmarks for Grid-Based Pathfinding',
-        attribution_url='https://www.movingai.com/benchmarks/grids.html',data_license='Open Data Commons Attribution; original source rights retained, not software MIT')
-    (directory/'DOWNLOAD_RECEIPT.json').write_text(json.dumps(receipt,indent=2),encoding='utf-8')
+    directory=Path(directory)
+    if directory.exists() or directory.is_symlink():raise FileExistsError(directory)
+    directory.parent.mkdir(parents=True,exist_ok=True)
+    # Reserve the final name only after both downloads and semantic validation.
+    # Failed attempts discard only their own temporary staging directory.
+    with tempfile.TemporaryDirectory(prefix='.'+directory.name+'-',dir=directory.parent) as temporary:
+        staging=Path(temporary);records=[]
+        for url,suffix in ((map_url,'.map'),(scenario_url,'.scen')):
+            with urllib.request.urlopen(url,timeout=60) as response:
+                final_url=response.url
+                final=urllib.parse.urlparse(final_url)
+                if final.hostname not in ('www.movingai.com','movingai.com'):raise ValueError('unexpected download redirect')
+                raw=response.read()
+            archive_name='map.zip' if suffix=='.map' else 'scenario.zip'
+            (staging/archive_name).write_bytes(raw)
+            with zipfile.ZipFile(io.BytesIO(raw)) as z:
+                members=[n for n in z.namelist() if n.endswith(suffix)]
+                if len(members)!=1:raise ValueError('expected exactly one map/scenario per archive')
+                info=z.getinfo(members[0])
+                if info.file_size>64*1024*1024:raise ValueError('archive member too large')
+                content=z.read(info);name=Path(members[0].replace('\\','/')).name
+                (staging/name).write_bytes(content)
+            records.append(dict(url=url,final_url=final_url,archive=archive_name,archive_sha256=sha(raw),member=members[0],file=name,sha256=sha(content)))
+        grid=load_map(staging/records[0]['file']);load_scenarios(staging/records[1]['file'],grid)
+        receipt=dict(records=records,source='MovingAI Lab, Sturtevant2012 Benchmarks for Grid-Based Pathfinding',
+            attribution_url='https://www.movingai.com/benchmarks/grids.html',data_license='Open Data Commons Attribution; original source rights retained, not software MIT')
+        (staging/'DOWNLOAD_RECEIPT.json').write_text(json.dumps(receipt,indent=2),encoding='utf-8')
+        if directory.exists() or directory.is_symlink():raise FileExistsError(directory)
+        staging.rename(directory)
     return receipt
 
 
