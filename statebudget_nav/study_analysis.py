@@ -14,8 +14,27 @@ def read_json(path):
     return json.loads(Path(path).read_text(encoding='utf-8-sig'))
 
 
+def movingai_physical_identity(world_sha256, width, height, start, goal, heading=0):
+    """Identify geometry/endpoints/initial pose independently of sensing context."""
+    content = dict(world=world_sha256, width=width, height=height,
+                   start=start, goal=goal, heading=heading)
+    return hashlib.sha256(json.dumps(content, sort_keys=True).encode()).hexdigest()
+
+
 def task_identity(result):
     if 'physical_task_sha256' in result:
+        task = result.get('task', {})
+        if 'world_sha256' in result and all(k in task for k in ('width', 'height', 'start', 'goal')):
+            canonical = movingai_physical_identity(result['world_sha256'], task['width'], task['height'],
+                                                  task['start'], task['goal'], result.get('initial_heading', 0))
+            # Earlier versions included view in the stored digest. Derive the
+            # geometry identity without editing those historical result files.
+            if result.get('physical_task_identity_schema') == 'statebudget.movingai_physical_task.v2':
+                if result['physical_task_sha256'] != canonical:
+                    raise ValueError('physical task digest differs from declared geometry')
+            return 'movingai:' + canonical
+        # Incomplete legacy metadata cannot be reconstructed; retain its key
+        # rather than inventing an equivalence between unsupported records.
         return 'movingai:' + result['physical_task_sha256']
     if 'layout_hash' in result:
         return 'minigrid:' + result['env'] + ':' + result['layout_hash']
@@ -159,12 +178,30 @@ def summarize_study(directory):
     plan = read_json(root / 'plan.json')
     slots = read_json(root / 'conditions.json')
     records = []
+    identity_aliases = {}
     for slot in slots:
         path = root / 'runs' / slot['run_id'] / 'record.json'
         record = read_json(path) if path.exists() else dict(slot, status='missing')
         if any(record[k] != slot[k] for k in ('run_id','task_id','controller_id','budget')):
             raise ValueError('record does not match planned condition')
+        if record.get('result') and record.get('task_identity', '').startswith('movingai:'):
+            measured = read_json(path.parent / record['result'])
+            canonical = task_identity(measured)
+            original = 'movingai:' + measured['physical_task_sha256']
+            if record['task_identity'] not in (original, canonical):
+                raise ValueError('record/result physical task identity mismatch')
+            for alias in (original, record['task_identity']):
+                if identity_aliases.setdefault(alias, canonical) != canonical:
+                    raise ValueError('inconsistent legacy physical task identity')
         records.append(record)
+    # Preflight failures may have no result file. Normalize them only when a
+    # complete result proved the same recorded key's geometry elsewhere in
+    # this study; otherwise keep the original identity without guessing.
+    records = [{**r, 'recorded_task_identity': r['task_identity'],
+                'task_identity': identity_aliases[r['task_identity']]}
+               if r.get('task_identity') in identity_aliases
+               and identity_aliases[r['task_identity']] != r['task_identity'] else r
+               for r in records]
     groups = []
     for task in plan['tasks']:
         for controller in plan['controllers']:
@@ -181,7 +218,10 @@ def summarize_study(directory):
         if len({r['task_identity'] for r in identified})>1 or len({json.dumps(r['context'],sort_keys=True) for r in identified})>1:
             raise ValueError('task or context changed across controllers')
     identities = {r['task_identity'] for r in records if r.get('task_identity')}
+    task_contexts = {(r['task_identity'], json.dumps(r['context'], sort_keys=True))
+                     for r in records if r.get('task_identity') and r.get('context')}
     return {'schema': 'statebudget.study_report.v1', 'planned_executions': len(slots),
             'status_counts': {s: sum(r['status'] == s for r in records) for s in sorted({r['status'] for r in records})},
             'distinct_physical_tasks_with_identified_records': len(identities),
+            'distinct_task_contexts_with_identified_records': len(task_contexts),
             'groups': groups, 'scope': 'Conditional per-task/controller budget curves. Task aliases/repeats are not independent physical samples; no global codec ranking.'}

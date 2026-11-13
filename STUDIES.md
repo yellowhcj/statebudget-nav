@@ -113,6 +113,15 @@ budgets are not interpolated. Neither statistic guarantees success beyond the
 tested points. Distinct physical task counts deduplicate aliases and seeds;
 groups are not independent samples and no overall codec ranking is computed.
 
+MovingAI physical identity covers occupancy, dimensions, endpoints and initial
+heading. View and stopping limits remain separate context: two views of the same
+map/endpoint task count once physically but cannot be paired for trace diagnosis.
+Reports give both physical-task and task/context counts. New results mark the
+geometry-only identity as `statebudget.movingai_physical_task.v2`; a separate
+`sensor_task_sha256` preserves the earlier sensor-inclusive key. Reading complete
+older result metadata derives the geometry key without rewriting the old files.
+When geometry metadata is absent, its original legacy key is retained instead.
+
 ## Inspect paired recorded decisions
 
 Choose runs with matching physical tasks and sensor/stopping context. Run IDs

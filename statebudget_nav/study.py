@@ -11,7 +11,7 @@ import re
 import shutil
 import subprocess
 import sys
-from .study_analysis import (sha, read_json, task_identity, context, trace_events,
+from .study_analysis import (sha, read_json, task_identity, movingai_physical_identity, context, trace_events,
                              compare_traces, summarize_study, verify_files)
 from ._runtime_identity import assert_runtime_matches
 
@@ -163,8 +163,8 @@ def worker(condition_path):
             if d4 is None:
                 raise ValueError('endpoints unsupported by 4-way adaptation')
             # Match evaluator identity exactly, including the sensor convention.
-            physical = hashlib.sha256(json.dumps(dict(world=hashlib.sha256(grid.cells).hexdigest(),width=grid.width,
-                height=grid.height,start=scene.start,goal=scene.goal,heading=0,view=t.get('view',7)),sort_keys=True).encode()).hexdigest()
+            physical = movingai_physical_identity(hashlib.sha256(grid.cells).hexdigest(),grid.width,
+                grid.height,scene.start,scene.goal)
             record.update(task_identity='movingai:'+physical,
                           context=dict(view=t.get('view',7),limit=max(600,math.ceil(t.get('movement_multiplier',6)*d4))))
             initial_path=c.get('initial_state')

@@ -25,6 +25,7 @@ import zipfile
 
 from . import ControllerSpec,Frame,checked_step,checkpoint,replay_checkpoint,__version__
 from ._core import fullmap
+from .study_analysis import movingai_physical_identity,task_identity,context
 
 
 def sha(data):return hashlib.sha256(data).hexdigest()
@@ -258,9 +259,12 @@ def run(map_path,scenario_path,directory,policy='walls',budget=1024,line=None,qu
     for p in modules:
         if sources[p.name]!=sha(p.read_bytes()):raise ValueError('source changed during run')
     if plugin_source and sources[plugin_name]!=sha(plugin_source.read_bytes()):raise ValueError('plugin source changed during run')
-    task_id=sha(json.dumps(dict(world=sha(grid.cells),width=grid.width,height=grid.height,start=s.start,goal=s.goal,heading=0,view=view),sort_keys=True).encode())
+    task_id=movingai_physical_identity(sha(grid.cells),grid.width,grid.height,s.start,s.goal)
+    sensor_task_id=sha(json.dumps(dict(world=sha(grid.cells),width=grid.width,height=grid.height,start=s.start,goal=s.goal,heading=0,view=view),sort_keys=True).encode())
     result=dict(package_version=__version__,convention='MovingAI data; adapted4-way partial-observation navigation, not official scores',
-        task=asdict(s),physical_task_sha256=task_id,map_sha256=grid.source_sha256,world_sha256=sha(grid.cells),scenario_sha256=sha(Path(scenario_path).read_bytes()),
+        task=asdict(s),physical_task_sha256=task_id,physical_task_identity_schema='statebudget.movingai_physical_task.v2',
+        sensor_task_sha256=sensor_task_id,initial_heading=0,
+        map_sha256=grid.source_sha256,world_sha256=sha(grid.cells),scenario_sha256=sha(Path(scenario_path).read_bytes()),
         oracle4=d4,official_distance_verified=False,limit=limit,view=view,policy=policy,budget=budget,success=pos==s.goal,moves=moves,actions=actions,
         stop_reason='goal' if pos==s.goal else 'move_limit' if moves>=limit else 'action_limit',max_state_bytes=peak,
         initial_state_hex=initial,initial_state_sha256=sha(bytes.fromhex(initial)),final_state_hex=state.hex(),statistics=statistics,trace_sha256=sha(path.read_bytes()),fresh_replays=0,
@@ -306,7 +310,10 @@ def run(map_path,scenario_path,directory,policy='walls',budget=1024,line=None,qu
 
 def report(directories):
     rows=[json.loads((Path(p)/'result.json').read_bytes()) for p in directories]
-    identities=[r['physical_task_sha256'] for r in rows]
+    identities=[task_identity(r) for r in rows]
+    contexts={(task_identity(r),json.dumps(context(r),sort_keys=True)) for r in rows}
     return dict(executions=len(rows),distinct_physical_tasks=len(set(identities)),not_official_scores=True,
+        distinct_task_contexts=len(contexts),
         rows=[{**{k:r[k] for k in ('physical_task_sha256','policy','budget','success','moves','oracle4','max_state_bytes','fresh_replays')},
+               'canonical_task_identity':task_identity(r),'context':context(r),
                'replay_audit':r.get('replay_audit',{'status':'legacy_unreported'})} for r in rows])

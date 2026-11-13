@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0.dev13 (2026-11-13)
+
+- Separate MovingAI physical map/endpoint/initial-pose identity from sensor context.
+- Count a physical task once across different views while still rejecting cross-context trace pairing.
+- Derive canonical identity from complete legacy result metadata without rewriting historical files.
+- Preserve original sensor-inclusive digest separately in new results and report distinct task/context counts.
+- Controller, planner, encoding, retention and zero-call replay semantics are unchanged.
+
 ## 0.1.0.dev12 (2026-11-13)
 
 - Enforce LF source checkout bytes with .gitattributes and normalize runtime source before packaging.

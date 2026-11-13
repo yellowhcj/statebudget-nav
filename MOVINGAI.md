@@ -142,6 +142,17 @@ package contains C++ source, not vendored third-party runtime DLLs.
 
 ## Task and evidence conventions
 
+Physical task identity covers occupancy, dimensions, start, goal and initial
+heading; view and stopping limits are separate context. Different views therefore
+count as one physical task and two task/context conditions, and remain ineligible
+for paired trace diagnosis. Dev13 results explicitly mark the geometry-only
+identity and preserve the prior sensor-inclusive digest as `sensor_task_sha256`.
+Legacy result files are not rewritten: reports derive the geometry key when
+their world/task metadata is complete, otherwise retain the original key.
+Report rows expose that `canonical_task_identity` and context alongside the
+original stored digest. Study reports retain a differing old key explicitly as
+`recorded_task_identity` while grouping by the derived physical identity.
+
 The official MovingAI model provides known maps and eight-direction movement.
 Our run is an **adapted four-direction, partial-observation comparison**, with
 exact pose, known charged destination, initial east heading and7x7 square
