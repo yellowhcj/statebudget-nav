@@ -1,12 +1,12 @@
 # From a clean checkout to an auditable result
 
 Use Python 3.10 or newer. These general commands apply to the current source
-checkout; record its version and `git rev-parse HEAD`. This version is dev11;
-use its release tag when a fixed dev11 installation is required. Historical dev7 records below
-are retained as examples, not newly measured results from dev11.
+checkout; record its version and `git rev-parse HEAD`. This version is dev12;
+use its release tag when a fixed dev12 installation is required. Historical dev7 records below
+are retained as examples, not newly measured results from dev12.
 
 The dev7 release was exercised on Windows/Python 3.12.7, with its recorded CI on
-Ubuntu/Windows and Python 3.10/3.12. That historical evidence is not a dev11 platform
+Ubuntu/Windows and Python 3.10/3.12. That historical evidence is not a dev12 platform
 validation. GitHub and the Python package index must be reachable; configure any
 needed proxy for your machine. Check Git, Python and pip before starting. Choose
 an installed Python or Conda environment >=3.10 rather than replacing system Python.
@@ -43,7 +43,7 @@ python -m statebudget_nav run --env MiniGrid-FourRooms-v0 --policy compressed --
 python -m statebudget_nav audit runs/trace.jsonl --fresh-process --stride 10
 ```
 
-Use new output paths. The historical dev7 example recorded success, 81 actions, maximum payload 64 bytes and nine sampled replay comparisons; verify the current output rather than treating these as a new dev11 measurement. Timings can differ. `result.json` holds outcomes and fingerprints; `trace.jsonl` holds local frames, input bytes, specifications and expected action/state hashes. Omit `--stride 10` to check every recorded decision. Replay does not bound total RAM or prove arbitrary code has no hidden state.
+Use new output paths. The historical dev7 example recorded success, 81 actions, maximum payload 64 bytes and nine sampled replay comparisons; verify the current output rather than treating these as a new dev12 measurement. Timings can differ. `result.json` holds outcomes and fingerprints; `trace.jsonl` holds local frames, input bytes, specifications and expected action/state hashes. Omit `--stride 10` to check every recorded decision. Replay does not bound total RAM or prove arbitrary code has no hidden state.
 
 For this 19-by-19 map, `compressed` has a 26-byte structural minimum. Smaller
 budgets are invalid configurations, not failed navigation episodes. Current source checks this before creating a trace, so correcting the budget can reuse

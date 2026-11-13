@@ -1,10 +1,10 @@
 # StateBudget-Nav
 
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![Version 0.1.0.dev11](https://img.shields.io/badge/version-0.1.0.dev11-blue.svg)
+![Version 0.1.0.dev12](https://img.shields.io/badge/version-0.1.0.dev12-blue.svg)
 [![Tests](https://github.com/yellowhcj/statebudget-nav/actions/workflows/tests.yml/badge.svg)](https://github.com/yellowhcj/statebudget-nav/actions/workflows/tests.yml)
 
-Version **0.1.0.dev11** preserves completed MovingAI outcomes when replay auditing fails. It retains configurable budget studies and portable source-identity checks from dev10.
+Version **0.1.0.dev12** preserves completed MovingAI outcomes when replay auditing fails. It retains configurable budget studies and portable source-identity checks, and fixes LF source bytes across Git checkouts and release wheels.
 Start with [STUDIES.md](STUDIES.md) for configurable plans and paired trace diagnosis.
 See [RESEARCH_WORKFLOW.md](RESEARCH_WORKFLOW.md) for a complete comparison,
 budget-sensitivity study and the division between user code and toolkit checks.
@@ -145,10 +145,10 @@ declared-byte and decision-audit workflow for trusted symbolic controllers. See
 
 ## Software archive
 
-Software version **0.1.0.dev11** has a [versioned release page](https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev11)
+Software version **0.1.0.dev12** has a [versioned release page](https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev12)
 with tagged source, matching tool/example wheels and SHA256 hashes. The release
 preserves completed MovingAI outcomes separately from replay-audit status.
 No Zenodo DOI has been assigned; add a real version DOI only after an archive
 record is published. See [ARCHIVING.md](ARCHIVING.md).
 Historical examples retain their original source snapshots and matching software
-in separate scientific archives; dev11 does not regenerate those historical results.
+in separate scientific archives; dev12 does not regenerate those historical results.

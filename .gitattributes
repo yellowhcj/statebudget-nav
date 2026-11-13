@@ -1,13 +1,6 @@
-# Keep Python source fingerprints stable on Windows and Unix checkouts.
-*.py text eol=lf
-# Trace fingerprints identify exact output bytes, including line endings.
-*.jsonl -text
-
-# Release runtime metadata and native source must match wheel fingerprints.
-statebudget_nav/_core/provenance.json text eol=lf
-*.cpp text eol=lf
-
-# New release documentation and separately installed example.
-/*.md text eol=lf
-/*.toml text eol=lf
-external_examples/** text eol=lf
+* text=auto eol=lf
+*.png -text
+*.pdf -text
+*.zip -text
+*.whl -text
+*.gz -text

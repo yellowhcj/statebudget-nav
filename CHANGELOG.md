@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.0.dev12 (2026-11-13)
+
+- Enforce LF source checkout bytes with .gitattributes and normalize runtime source before packaging.
+- Make Git blobs, source ZIP, wheel and installed runtime files byte-identical.
+- Preserve dev11 audit-failure handling and all historical packages and results.
+
 ## 0.1.0.dev11 (2026-11-13)
 
 - Save completed MovingAI measurements before replay and preserve them on replay mismatch/process failure.
