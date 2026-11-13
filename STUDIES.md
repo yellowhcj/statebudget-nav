@@ -135,8 +135,13 @@ python -m statebudget_nav study compare --left runs/my-study/runs/r00000/trace.j
 Call numbers are one-based. The report separates first input-state bytes,
 output-state digest, action and current-frame differences. It checks state-chain
 continuity, trace length and result identity; witnesses indicate whether the
-entire preceding observation/action history still matches. It does not mistake
-different budget values in `spec` for behavioral divergence. A later action
+entire preceding observation/action history still matches.
+Where a result records `trace_sha256`, comparison also verifies that exact trace
+file; `trace_result_binding` reports verification separately for each side.
+New MiniGrid and MovingAI results record this digest when a trace is written.
+Historical or custom results without that digest remain compatible, with binding marked
+`unavailable_in_result`; their metadata checks do not establish file binding.
+It does not mistake different budget values in `spec` for behavioral divergence. A later action
 difference after observation histories separated is not an isolated memory effect.
 Byte differences do not alone show semantic information loss or explain eventual failure.
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.0.dev14 (2026-11-13)
+
+- Verify declared trace file hashes before paired diagnostics; reject accidentally mismatched trace/result files.
+- Add trace file hashes to new MiniGrid results when recording; retain explicitly marked legacy no-hash analysis.
+- Correct current MovingAI version and incomplete-execution versus replay-audit failure guidance.
+- Keep controller/planner/encoding/retention behavior and all historical scientific files unchanged.
+
 ## 0.1.0.dev13 (2026-11-13)
 
 - Separate MovingAI physical map/endpoint/initial-pose identity from sensor context.

@@ -45,10 +45,14 @@ def run_episode(env_name,seed=10000,policy='compressed',budget=64,limit=600,
             obs,reward,terminated,truncated,_=env.step(action)
             if terminated or truncated:
                 success=bool(terminated and reward>0);break
-        return dict(env=env_name,seed=seed,agent_seed=agent_seed,policy=policy,budget=budget,
+        result=dict(env=env_name,seed=seed,agent_seed=agent_seed,policy=policy,budget=budget,
                     limit=limit,view=view,selector=selector,success=int(success),steps=t+1,
                     max_state_bytes=max_bytes,cpu_ms=cpu_ns/1e6,
                     trajectory_hash=trace.hexdigest(),loops_detected=loops,face_merges=merges,**stats)
+        if stream:
+            stream.flush()
+            result['trace_sha256']=hashlib.sha256(trace_path.read_bytes()).hexdigest()
+        return result
     finally:
         if stream:stream.close()
         env.close()

@@ -1,10 +1,10 @@
 # StateBudget-Nav
 
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![Version 0.1.0.dev13](https://img.shields.io/badge/version-0.1.0.dev13-blue.svg)
+![Version 0.1.0.dev14](https://img.shields.io/badge/version-0.1.0.dev14-blue.svg)
 [![Tests](https://github.com/yellowhcj/statebudget-nav/actions/workflows/tests.yml/badge.svg)](https://github.com/yellowhcj/statebudget-nav/actions/workflows/tests.yml)
 
-Version **0.1.0.dev13** separates MovingAI physical-task identity from sensor context, so changing the view does not create another physical map/endpoint task. Pairing still requires matching sensor/stopping contexts. It retains the completed-outcome audit handling and canonical source bytes introduced in dev12.
+Version **0.1.0.dev14** binds paired trace diagnostics to the file hashes in their results. New MiniGrid traces record the file hash too; historical results without it remain readable and report unavailable binding. Physical tasks and sensor/stopping contexts remain separate, and completed measurements survive replay-audit failures.
 Start with [STUDIES.md](STUDIES.md) for configurable plans and paired trace diagnosis.
 See [RESEARCH_WORKFLOW.md](RESEARCH_WORKFLOW.md) for a complete comparison,
 budget-sensitivity study and the division between user code and toolkit checks.
@@ -145,10 +145,10 @@ declared-byte and decision-audit workflow for trusted symbolic controllers. See
 
 ## Software archive
 
-Software version **0.1.0.dev13** has a [versioned release page](https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev13)
+Software version **0.1.0.dev14** has a [versioned release page](https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev14)
 with tagged source, matching tool/example wheels and SHA256 hashes. The release
 preserves completed MovingAI outcomes separately from replay-audit status.
 No Zenodo DOI has been assigned; add a real version DOI only after an archive
 record is published. See [ARCHIVING.md](ARCHIVING.md).
 Historical examples retain their original source snapshots and matching software
-in separate scientific archives; dev13 does not regenerate those historical results.
+in separate scientific archives; dev14 does not regenerate those historical results.

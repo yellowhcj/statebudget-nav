@@ -1,21 +1,22 @@
-# dev13 candidate validation and remaining archive work (2026-11-13)
+# Release verification procedure
 
-- [x] Save completed MovingAI measurements before replay; report audit failures separately.
-- [x] Action/state mismatch, process exception, real execution error, no-call and source-drift regressions.
-- [x] Historical dev12 installed validation passed 74 tests; this does not certify dev13.
-- [x] Physical-task identity and sensor context separated; legacy result metadata supported.
-- [ ] Complete dev13 installed tests and source/wheel/install identity verification.
-- [x] 15 controller/planner/encoding/retention core files unchanged from dev10.
-- [x] Current and historical documentation versions distinguished.
-- [ ] Create a permanent software archive and add its real DOI after publication.
-- [ ] Final manuscript/attachments, authorship and journal submission checks.
+For dev14, inspect its actual release assets and CI jobs:
+https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev14
 
-The CI matrix is Windows/Ubuntu x Python3.10/3.12; inspect actual jobs for this
-release rather than interpreting a configured workflow as a successful run.
-Release assets and their hash manifest identify the delivered build:
-https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev13
-Historical dev7/dev9 scientific studies keep their original versions. Dev11 changes
-failure handling and documentation. Dev13 changes task counting, not navigation
-algorithms or historical results. This candidate is not a published release until
-the corresponding release page and verified assets exist.
-No journal submission, DOI or acceptance is implied.
+1. Test the installed wheel, including wrong trace/result pairing, legacy no-hash
+   analysis, completed-outcome audit failure and physical-task/context identity.
+2. Verify exact runtime bytes across Git source, source ZIP, wheel and installation.
+3. Run a small two-adapter study, relocate its files and replay recorded samples.
+4. Inspect actual Windows/Ubuntu x Python 3.10/3.12 jobs for this commit; a configured
+   workflow alone is not a successful run. Download the assets and compare hashes.
+5. Preserve historical scientific versions and the 15 controller/planner/codec/
+   retention core files. A successor is not an exact-source replay replacement.
+
+Historical dev13 passed 81 installed tests; that count does not certify dev14.
+Dev14 adds trace/result binding metadata and validation, not a navigation change.
+Its current guides distinguish incomplete execution from completed measurements
+with replay-audit errors. The immutable source tag and assets record delivery.
+
+Remaining archive/submission work is separate: create a permanent software record
+and add its real DOI after publication; check final manuscript/attachments,
+authorship and current journal rules. A GitHub release implies none of these.

@@ -1,9 +1,9 @@
 # Version archiving
 
-Software version: `0.1.0.dev13`, MIT license.
-Release: https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev13
+Software version: `0.1.0.dev14`, MIT license.
+Release: https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev14
 The immutable release tag identifies the source; source ZIP, matching tool/example
-wheels and SHA256 manifest are its release assets. Previous dev7/dev9/dev10/dev11/dev12
+wheels and SHA256 manifest are its release assets. Previous dev7/dev9/dev10/dev11/dev12/dev13
 artifacts remain unchanged. Historical scientific studies require their exact
 recorded software; a successor is not an exact-source replacement.
 

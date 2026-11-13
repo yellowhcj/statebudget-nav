@@ -107,6 +107,15 @@ def compare_traces(left, right, left_result, right_result):
         raise ValueError('different physical tasks cannot be paired')
     if context(left_result) != context(right_result):
         raise ValueError('different sensor/stopping contexts cannot be paired')
+    trace_hashes = {'left': sha(left), 'right': sha(right)}
+    trace_result_binding = {}
+    for side, result in (('left', left_result), ('right', right_result)):
+        if 'trace_sha256' in result:
+            if trace_hashes[side] != result['trace_sha256']:
+                raise ValueError(side + ' trace/result file SHA256 mismatch')
+            trace_result_binding[side] = 'verified_file_sha256'
+        else:
+            trace_result_binding[side] = 'unavailable_in_result'
     a, b = list(trace_events(left)), list(trace_events(right))
     for events, result in ((a, left_result), (b, right_result)):
         dimensions = set()
@@ -155,7 +164,8 @@ def compare_traces(left, right, left_result, right_result):
             raise ValueError('trace length differs from completed result')
     return {'schema': 'statebudget.trace_comparison.v1', 'task_identity': task_identity(left_result),
             'context': context(left_result), 'call_numbering': 'one-based controller calls',
-            'left_sha256': sha(left), 'right_sha256': sha(right),
+            'left_sha256': trace_hashes['left'], 'right_sha256': trace_hashes['right'],
+            'trace_result_binding': trace_result_binding,
             'left_calls': len(a), 'right_calls': len(b), 'compared_calls': min(len(a), len(b)),
             'unpaired_tail_calls': abs(len(a)-len(b)),
             'first_differing_call': first, 'witnesses': witnesses,

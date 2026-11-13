@@ -2,7 +2,7 @@
 
 MIT-licensed conventional example, written by the software author. It tests
 reuse of StateBudget-Nav rather than novelty or independent scientific adoption.
-Install the two supplied wheels. See the candidate MOVINGAI guide for commands.
+Install the two supplied wheels. See the [MOVINGAI guide](../../MOVINGAI.md) for commands.
 
 The controller imports only Python standard-library modules. Its initializer
 uses the public MovingAI parser to obtain the declared destination; no map cell

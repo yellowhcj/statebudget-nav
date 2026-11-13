@@ -28,10 +28,10 @@ python -m pip install ./external_examples/navmemory_example --no-deps --no-build
 ```
 
 Or install the matching two wheels. Record their hashes and dependency versions.
-For configurable plans and paired diagnosis in dev13, start with
+For configurable plans and paired diagnosis in dev14, start with
 [STUDIES.md](STUDIES.md). This page preserves the earlier two convenience examples.
 Their historical dev7/dev8 records retain their original matching versions;
-the convenience commands remain available in dev13.
+the convenience commands remain available in dev14.
 Use a new output directory for each study; existing evidence is never overwritten.
 
 ## Question 1: what changes when another memory representation is connected?

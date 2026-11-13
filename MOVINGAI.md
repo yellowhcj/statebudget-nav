@@ -3,16 +3,17 @@
 The MovingAI adapter introduced in dev7 connects map-memory studies to the public
 `Frame`, `ControllerSpec`, `checked_step`, checkpoint and replay interfaces.
 Trusted importable plugins can use 32-bit cell indices; bundled MiniGrid policies
-retain their 16-bit limit. The latest public release is dev10; this source tree is
-a local dev11 successor candidate, not yet published.
+retain their 16-bit limit. This guide accompanies dev14; install its fixed
+[release assets](https://github.com/yellowhcj/statebudget-nav/releases/tag/v0.1.0-dev14)
+when reproducing this version.
 
 Completed navigation results are saved before replay auditing. A replay mismatch
 or replay process error preserves that result with `replay_audit.status="error"`
 and raises `ReplayAuditError`; the study layer records `audit_error` and excludes
-it from audited success curves. Genuine execution errors still preserve only the
+it from usable outcome curves. Genuine execution errors still preserve only the
 available partial artifacts. Zero-decision tasks report no replay evidence.
 
-In this candidate, `movingai-fetch` downloads and validates both archives in a
+`movingai-fetch` downloads and validates both archives in a
 temporary sibling directory before publishing the final input directory. A network
 or validation error leaves that final path available for retry. Existing output
 directories are rejected and preserved. Use one writer for a destination; a hard
@@ -25,7 +26,7 @@ The conventional retention rules are examples, not new compression algorithms.
 
 ## Install, obtain inputs and select an original task
 
-Install from this candidate source directory or its wheel:
+Install from this source directory or its matching release wheel:
 
 ```powershell
 python -m pip install . --no-build-isolation
@@ -69,8 +70,8 @@ planning strategy, so it is not an isolated compression comparison.
 
 Each run writes the original scenario row, physical-task fingerprint, source
 snapshots, budget and actual peak bytes, full gzip checkpoints, complete result
-and first/middle/last replay inputs. Those three checkpoints are replayed in new
-interpreters before the result is finalized. The `audit` command can replay
+and first/middle/last replay inputs. The completed measurement is saved before those three checkpoints are replayed
+in new interpreters; the result then records the replay outcome separately. The `audit` command can replay
 additional/all decisions. This is deterministic replay, not a separate proof of
 the world, sensor, movement and retention semantics; those were independently
 audited in the pilot evidence. Partial directories from an interrupted run must
@@ -115,8 +116,10 @@ numeric totals; checkpoints retain inputs and expected action/state digests. Ini
 Plugins are trusted Python modules, not sandboxed. The entry-module snapshot
 is not the complete dependency closure: archive the exact plugin wheel,
 StateBudget-Nav wheel and dependencies as well. Replay requires those modules
-to remain importable in the selected Python environment. A failed/interrupted
-run may leave partial traces, but it never gains a completed `result.json`.
+to remain importable in the selected Python environment. An execution interrupted
+before navigation completes may leave only partial artifacts. If navigation
+completes but replay fails, its `result.json` is retained with an explicit
+`replay_audit.status="error"`; the study condition is `audit_error`.
 
 ## Optional C++ backend
 
@@ -131,7 +134,7 @@ python -m statebudget_nav movingai --map inputs/berlin/Berlin_1_256.map --scenar
 On Linux/macOS use an appropriate shared-library suffix and set the same
 environment variable using your shell's syntax. Linux/macOS builds are provided
 by the portable source but have not been exercised on those systems in this
-release candidate. On Windows, the tested build uses MinGW-w64g++11.2 with
+version. On Windows, the tested build uses MinGW-w64g++11.2 with
 static runtime linking. Record the resulting library hash; the environment
 variable points only to immutable backend code and supplies no episode memory.
 Fresh replay needs the same library and environment variable. Python/native
@@ -145,7 +148,7 @@ package contains C++ source, not vendored third-party runtime DLLs.
 Physical task identity covers occupancy, dimensions, start, goal and initial
 heading; view and stopping limits are separate context. Different views therefore
 count as one physical task and two task/context conditions, and remain ineligible
-for paired trace diagnosis. Dev13 results explicitly mark the geometry-only
+for paired trace diagnosis. Results since dev13 explicitly mark the geometry-only
 identity and preserve the prior sensor-inclusive digest as `sensor_task_sha256`.
 Legacy result files are not rewritten: reports derive the geometry key when
 their world/task metadata is complete, otherwise retain the original key.
